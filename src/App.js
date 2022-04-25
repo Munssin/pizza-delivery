@@ -1,8 +1,12 @@
 import React, {useState} from "react";
+import { Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header";
-import ProductItem from "./components/ProductItem";
+import Footer from "./components/Footer";
+import PizzaPage from "./components/PizzaPage";
 import "./components/css/reset.scss";
 import "./components/css/main.scss";
+import DiscountPage from "./components/DiscountsPage";
 
 const App = () => {
   const [headerClass, setHeaderClass] = useState('no-fix');
@@ -29,18 +33,13 @@ const App = () => {
   return (
     <div className="App">
         <Header type={headerClass} />
-        <button onClick={ChangeHeaderClass}>Change header Class</button>
-        <div className='catalog'>
-            <div className="catalog-container">
-                <ProductItem  />
-                <ProductItem />
-                <ProductItem />
-                <ProductItem />
-            </div>
-        </div>
-        {/*<button onClick={changeObg}>Change Object</button>*/}
-        {/*<div>{obj.name}</div>*/}
-        {/*<div>{obj.surname}</div>*/}
+        {/*<button onClick={ChangeHeaderClass}>Change header Class</button>*/}
+            <Routes>
+                <Route path='/' element={<PizzaPage/>}/>
+                <Route path='/discount-page' element={<DiscountPage/>}/>
+                <Route path='*' element={<PizzaPage/>}/>
+            </Routes>
+        <Footer/>
     </div>
   );
 }

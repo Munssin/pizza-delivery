@@ -1,23 +1,24 @@
 import React from "react";
-import ButtonComponet from "./UI/button/ButtonComponet";
+import ButtonComponet from "./button/ButtonComponet";
 
-const ProductItem = (props) => {
+const Card = (props) => {
+    const {img, title, description, size, weight, price} = props;
     return (
         <div className="product-item">
             <a href="">
                 <div className="product-item__photo">
-                    <img src="" alt=""/>
+                    <img src={img} alt=""/>
                 </div>
                 <div className="product-item__info">
-                    <h2 className="product-item__name">Salmone</h2>
+                    <h2 className="product-item__name">{title}</h2>
                     <p className="product-item__text">
-                        Вершки, моцарела, лосось, лимон, пармезан, рукола </p>
+                        {description} </p>
                     <div className="product-item__info-main">
                         <div className="product-item__properties">
-                            <span className="product-item_properties__text">Розмір:30см; </span>
-                            <span className="product-item__properties__text">Вага:350г; </span>
+                            <span className="product-item_properties__text">Розмір:{size}см; </span>
+                            <span className="product-item__properties__text">Вага:{weight}г; </span>
                         </div>
-                        <div className="product-item__price" data-price="247">247 <span>грн</span></div>
+                        <div className="product-item__price">{price} <span>грн</span></div>
                     </div>
                 </div>
             </a>
@@ -28,4 +29,4 @@ const ProductItem = (props) => {
     );
 }
 
-export default ProductItem;
+export default Card;
