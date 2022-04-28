@@ -1,6 +1,32 @@
 .discount{
   padding: 120px 0;
+  h1{
+    text-align: center;
+    margin-bottom: 30px;
+  }
   .discount-container{
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  .discount-item{
+    width: 50%;
+    margin-bottom: 30px;
+    max-width: 470px;
+    img{
+      height: 470px;
+      width: 470px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+    &__list{
+      margin-top: 10px;
+      li{
+        margin-bottom: 10px;
+      }
+    }
   }
 }

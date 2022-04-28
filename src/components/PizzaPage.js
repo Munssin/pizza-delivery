@@ -1,53 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
 
+import {useDispatch, useSelector} from "react-redux";
+
+import {INCREASE_COUNT, REDUCE_COUNT} from "../redux/types";
+
+// import BannerMain from "UI/BannerMain";
 import FilterPizza from "./FilterPizza";
 import ConstructorPizza from "./ConstructorPizza";
 import Card from "./UI/Card";
 import PizzaIMG from "./img/887590c4.jpeg"
+import ButtonComponet from "./UI/button/ButtonComponet";
+
+import Swiper from "./UI/carousel/Swiper";
 
 
 const PizzaPage = (props) => {
-    const dataPizza = [
-            {
-            id: 1,
-            img: PizzaIMG,
-                title: 'Frutti di mare',
-            description: 'томат, моцарела, морепродукти, лимон, пармезан',
-            size: '30',
-            weight: '350',
-            price: '200'
-        },
-        {
-            id: 2,
-            img: PizzaIMG,
-            title: 'Salmone',
-            description: 'томат, моцарела, морепродукти, лимон, sadsadasd asd as пармезан',
-            size: '35',
-            weight: '450',
-            price: '220'
-        },
-        {
-            id: 3,
-            img: PizzaIMG,
-            title: 'anasda',
-            description: 'томат, моцарела, пармезан',
-            size: '35',
-            weight: '450',
-            price: '220'
-        },
-        {
-            id: 4,
-            img: PizzaIMG,
-            title: 'ZCCcasdd',
-            description: 'томат, моцарела, томат, моцарела, пармезан пармезан',
-            size: '32',
-            weight: '250',
-            price: '190'
-        },
-    ];
+    const pizzasData = useSelector(state => state.pizza.data);
+    const [filteredPizzasData, setFilteredPizzasData] = useState(pizzasData);
+
+    const dispatch = useDispatch();
 
     const renderCard = () => {
-       return dataPizza.map(item => {
+       return filteredPizzasData.map(item => {
           return <Card
           key={item.id}
           img={item.img}
@@ -60,14 +34,20 @@ const PizzaPage = (props) => {
       })
     };
 
+    const onSortPizza = (category) => {
+        const updatedContent = pizzasData.filter(item => category === "All" ? item : item.category === category);
+        setFilteredPizzasData(updatedContent);
+    }
+
     return (
         <div className="pizza-main">
+            <Swiper />
             <div className="main-banner">
                 <h1>Pizza Title</h1>
             </div>
 
-            <FilterPizza/>
-            <ConstructorPizza/>
+            <FilterPizza onSortPizza={onSortPizza} pizzasData={pizzasData}/>
+            {/*<ConstructorPizza/>*/}
             <div className="catalog">
                 <div className="catalog-container">
                     {renderCard()}

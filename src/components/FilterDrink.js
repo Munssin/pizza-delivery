@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 // import ButtonComponet from "./UI/button/ButtonComponet";
 
-const FilterPizza = ({pizzasData, onSortPizza}) => {
+const FilterDrink = ({drinksData, onSortDrink}) => {
     const [sort, setSort] = useState('');
     const [tabs, setTabs] = useState([
         {
@@ -9,46 +9,40 @@ const FilterPizza = ({pizzasData, onSortPizza}) => {
             name: "Усі",
             category: 'All',
             status: true
-         },
+        },
         {
             id: 2,
-            name: "Вегетаріанська",
-            category: 'vegetarian',
+            name: "Соки",
+            category: 'Juice',
             status: false
         },
         {
             id: 3,
-            name: "Рибна",
-            category: 'fish',
+            name: "Води",
+            category: 'Water',
             status: false
         },
-        {
-            id: 4,
-            name: "М'ясна",
-            category: 'meat',
-            status: false
-        }
     ]);
 
-    const onFilterPizza = (category) => {
-        const updatedContent = pizzasData.filter(item => category === "All" ? item : item.category === category);
+    const onFilterDrink = (category) => {
+        const updatedContent = drinksData.filter(item => category === "All" ? item : item.category === category);
 
         const updatedTabs = tabs.map(item => {
             if (item.category === category){
                 return {...item, status: true}
             } else {
-               return {...item, status: false}
+                return {...item, status: false}
             }
         });
         setTabs(updatedTabs);
-        onSortPizza(category);
+        onSortDrink(category);
     }
 
     return (
         <div className="filter-container">
             {
                 tabs.map(tab => (
-                    <li onClick={() => onFilterPizza(tab.category)} key={tab.id} className={`${tab.status ? 'active' : ''} filter-item`}>{tab.name}</li>
+                    <li onClick={() => onFilterDrink(tab.category)} key={tab.id} className={`${tab.status ? 'active' : ''} filter-item`}>{tab.name}</li>
                 ))
             }
         </div>
@@ -56,4 +50,4 @@ const FilterPizza = ({pizzasData, onSortPizza}) => {
 
 }
 
-export default FilterPizza;
+export default FilterDrink;

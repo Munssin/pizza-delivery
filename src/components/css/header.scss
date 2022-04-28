@@ -64,3 +64,34 @@
     }
   }
 }
+
+.header-basket{
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #333333;
+  margin-left: 20px;
+  img{
+    width: 28px;
+    height: 24px;
+    margin-right: 9px;
+  }
+  &__calck{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 13px;
+    top: -10px;
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--red);
+    border-radius: 50%;
+  }
+}

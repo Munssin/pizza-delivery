@@ -2,10 +2,11 @@ import React from "react";
 import Button from "@atlaskit/button";
 import "./btn.scss";
 
-const ButtonComponet = (props) => {
+const ButtonComponet = ({onClick, buttonName}) => {
     return (
         <div className='btn'>
-            <Button style={{textTransform: "uppercase"}} className='btn'>{props.buttonName}</Button>
+            {/*{props.buttonType}*/}
+            <Button style={{textTransform: "uppercase"}} onClick={onClick} className='btn'>{buttonName}</Button>
         </div>
     );
 }

@@ -14,10 +14,14 @@ const Card = (props) => {
                     <p className="product-item__text">
                         {description} </p>
                     <div className="product-item__info-main">
-                        <div className="product-item__properties">
-                            <span className="product-item_properties__text">Розмір:{size}см; </span>
-                            <span className="product-item__properties__text">Вага:{weight}г; </span>
-                        </div>
+                        {
+                            size && weight && (
+                                <div className="product-item__properties">
+                                    <span className="product-item_properties__text">Розмір:{size}см; </span>
+                                    <span className="product-item__properties__text">Вага:{weight}г; </span>
+                                </div>
+                            )
+                        }
                         <div className="product-item__price">{price} <span>грн</span></div>
                     </div>
                 </div>
