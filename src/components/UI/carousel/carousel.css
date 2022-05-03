@@ -1,0 +1,27 @@
+/*.swipper{*/
+/*  .swiper-wrapper{*/
+/*    */
+/*  }*/
+/*}*/
+
+.swiper{
+  width: 100%;
+  height: 100vh;
+  max-height: 620px;
+  /*margin: 90px 0 0;*/
+  /*overflow: hidden;*/
+  /*position: relative;*/
+}
+.swiper-slide{
+  /*position: absolute;*/
+  /*left: 0;*/
+  /*right: 0;*/
+  /*top: 0;*/
+  /*bottom: 0;*/
+}
+.swiper-slide video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}

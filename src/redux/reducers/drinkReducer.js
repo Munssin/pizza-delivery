@@ -1,9 +1,10 @@
 import {INCREASE_COUNT, REDUCE_COUNT} from "../types";
-import PizzaIMG from "../../components/img/887590c4.jpeg";
+import PizzaIMG from "../../img/887590c4.jpeg";
 
 
 const dataDrink = [
         {
+            type: 'drink',
             id: 1,
             img: PizzaIMG,
             title: 'Cola',
@@ -12,6 +13,7 @@ const dataDrink = [
             category: 'Water'
         },
         {
+            type: 'drink',
             id: 2,
             img: PizzaIMG,
             title: 'Фанта',
@@ -20,6 +22,7 @@ const dataDrink = [
             category: 'Water'
         },
         {
+            type: 'drink',
             id: 3,
             img: PizzaIMG,
             title: 'Rich',

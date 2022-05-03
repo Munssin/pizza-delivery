@@ -11,10 +11,29 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 30px;
-  .fix-header{
+  &.fix-header{
     position: fixed;
     height: 90px;
     box-shadow: 0 1px 10px 0 rgb(0 0 0 / 10%);
+    .logo{
+      img{
+        width: 130px;
+        height: 100px;
+        top: 3px;
+      }
+    }
+  }
+  .logo{
+    position: relative;
+    img{
+      width: 150px;
+      height: 130px;
+      position: relative;
+      top: 10px;
+      object-fit: contain;
+      z-index: 9;
+      transition: .3s all ease;
+    }
   }
 }
 

@@ -1,5 +1,5 @@
 import {INCREASE_COUNT, REDUCE_COUNT} from "../types";
-import PizzaIMG from "../../components/img/887590c4.jpeg";
+import PizzaIMG from "../../img/887590c4.jpeg";
 
 const dataDiscount = [
     {

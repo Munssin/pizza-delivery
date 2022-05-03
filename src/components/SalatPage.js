@@ -6,7 +6,7 @@ import {INCREASE_COUNT, REDUCE_COUNT} from "../redux/types"
 
 import ConstructorPizza from "./ConstructorPizza";
 import SalatCard from "./UI/SalatCard";
-import PizzaIMG from "./img/887590c4.jpeg"
+import PizzaIMG from "../img/887590c4.jpeg"
 import Card from "./UI/Card";
 
 
@@ -20,7 +20,6 @@ class SalatPage extends Component{
     }
 
     renderCard = () => {
-        console.log(this.props);
         return this.props.salats.map(item => {
             return <Card
                 key={item.id}

@@ -1,9 +1,10 @@
 import {INCREASE_COUNT, REDUCE_COUNT} from "../types";
-import PizzaIMG from "../../components/img/887590c4.jpeg";
+import PizzaIMG from "../../img/887590c4.jpeg";
 
 
 const dataSalat = [
     {
+        type: 'salat',
         id: 1,
         img: PizzaIMG,
         title: 'З бастурмою',
@@ -11,6 +12,7 @@ const dataSalat = [
         price: '120',
     },
     {
+        type: 'salat',
         id: 2,
         img: PizzaIMG,
         title: 'Аллегро',
@@ -18,6 +20,7 @@ const dataSalat = [
         price: '110',
     },
     {
+        type: 'salat',
         id: 3,
         img: PizzaIMG,
         title: 'З бастурмою',
@@ -25,6 +28,7 @@ const dataSalat = [
         price: '120',
     },
     {
+        type: 'salat',
         id: 4,
         img: PizzaIMG,
         title: 'Аллегро',

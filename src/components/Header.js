@@ -4,13 +4,13 @@ import {Link} from "react-router-dom";
 import ButtonComponet from './UI/button/ButtonComponet'
 import ModalComponent from './UI/modal/ModalComponent'
 import ModalBasket from './UI/modal/ModalBasket'
-import "./css/header.scss";
-import Logo from "./img/logo.png"
-import basket from "./img/bas.png"
+import useScrollHandler from "../../src/helpers/useScrollHandler";
+import "../css/header.scss";
+import Logo from "../img/logo.png"
+import basket from "../img/bas.png"
 
 const Header = (props) => {
-    let headerToggleClass = props.type;
-    const headerNameClass = `header ${headerToggleClass}`;
+    const headerNameClass = `header ${useScrollHandler()}`;
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const openModal = () => {
@@ -19,8 +19,6 @@ const Header = (props) => {
     const closeModal = () => {
         setIsModalOpen(false);
     }
-
-
 
     const [isBasketOpen, setIsBasketOpen] = useState(false);
     const openBasket = () => {
@@ -31,7 +29,7 @@ const Header = (props) => {
     }
     return (
         <div>
-            <header className={headerNameClass}>
+            <header  className={headerNameClass}>
                 <Link to="/" className="logo">
                     <img src={Logo} alt="Logo"/>
                 </Link>

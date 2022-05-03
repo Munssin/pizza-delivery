@@ -1,11 +1,16 @@
 import React from "react";
 import ButtonComponet from "./button/ButtonComponet";
+import {Link} from "react-router-dom";
 
 const Card = (props) => {
-    const {img, title, description, size, weight, price} = props;
+    const {type, id, img, title, description, size, weight, price} = props;
+    const dynamicPath = type === 'pizza' ? `/detail-pizza/${id}` : '';
+
     return (
         <div className="product-item">
-            <a href="">
+            <Link
+                onClick={(e) => type !== 'pizza' && e.preventDefault()}
+                to={dynamicPath}>
                 <div className="product-item__photo">
                     <img src={img} alt=""/>
                 </div>
@@ -25,7 +30,7 @@ const Card = (props) => {
                         <div className="product-item__price">{price} <span>грн</span></div>
                     </div>
                 </div>
-            </a>
+            </Link>
             <div className="product-item__buy">
                 <ButtonComponet buttonName='Додати в корзину'/>
             </div>

@@ -1,8 +1,9 @@
 import {INCREASE_COUNT, REDUCE_COUNT} from "../types";
-import PizzaIMG from "../../components/img/887590c4.jpeg"
+import PizzaIMG from "../../img/887590c4.jpeg"
 
 const dataPizza = [
     {
+        type: 'pizza',
         id: 1,
         img: PizzaIMG,
         title: 'Frutti di mare',
@@ -13,6 +14,7 @@ const dataPizza = [
         category: 'meat'
     },
     {
+        type: 'pizza',
         id: 2,
         img: PizzaIMG,
         title: 'Salmone',
@@ -23,6 +25,7 @@ const dataPizza = [
         category: 'fish'
     },
     {
+        type: 'pizza',
         id: 3,
         img: PizzaIMG,
         title: 'anasda',
@@ -33,6 +36,7 @@ const dataPizza = [
         category: 'meat'
     },
     {
+        type: 'pizza',
         id: 4,
         img: PizzaIMG,
         title: 'ZCCcasdd',

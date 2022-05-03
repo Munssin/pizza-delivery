@@ -5,7 +5,7 @@ import {INCREASE_COUNT, REDUCE_COUNT} from "../redux/types";
 
 import FilterDrink from "./FilterDrink";
 import DrinkCard from "./UI/DrinkCard";
-import PizzaIMG from "./img/887590c4.jpeg"
+import PizzaIMG from "../img/887590c4.jpeg"
 
 
 const DrinkPage = (props) => {

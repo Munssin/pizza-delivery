@@ -28,6 +28,13 @@ const ModalBasket = ({isBasketOpen, closeBasket}) => {
                     </div>
                 </div>
             </div>
+            <div className="basket-all">
+                <div className="total">
+                    Всього до оплати:
+                    <span className="total__price">447 грн</span>
+                </div>
+            </div>
+            <Link to="checkout">Перейти до замовлення</Link>
         </div>
     </div>
     );
