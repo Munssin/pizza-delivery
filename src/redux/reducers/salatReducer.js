@@ -1,4 +1,3 @@
-import {INCREASE_COUNT, REDUCE_COUNT} from "../types";
 import PizzaIMG from "../../img/887590c4.jpeg";
 
 
@@ -43,16 +42,6 @@ const initialState = {
 
 export const salatReducer = (state = initialState, action) => {
     switch (action.type) {
-        case INCREASE_COUNT:
-            return {
-                ...state,
-                count: action.payload.number,
-            };
-        case REDUCE_COUNT:
-            return {
-                ...state,
-                count: action.payload.number,
-            };
         default: return state;
     }
 };

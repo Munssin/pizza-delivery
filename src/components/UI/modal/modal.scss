@@ -23,7 +23,7 @@
     overflow: hidden;
     background: rgba(0, 0, 0, 0.55);
   }
-  .close-bnt{
+  .close-btn{
     height: 20px;
     width: 20px;
     position: absolute;
@@ -68,9 +68,10 @@
       margin-bottom: 20px;
       font-size: 18px;
       line-height: 24px;
-      a{
+      .link{
         color: var(--green);
         font-weight: 500;
+        cursor: pointer;
       }
     }
     .form-group{
@@ -88,13 +89,14 @@
         align-items: center;
         justify-content: space-between;
         margin-top: 20px;
-      a{
+      span{
         font-weight: 500;
         font-size: 18px;
         line-height: 24px;
         display: block;
         text-decoration: underline;
         color: var(--green);
+        cursor: pointer;
       }
       .save-data{
         .checkbox-container{
@@ -161,6 +163,9 @@
       background: #fff;
       padding: 0 0 20px;
       margin-bottom: 20px;
+      a{
+        margin-right: 15px;
+      }
       img{
         height: 110px;
         display: block;
@@ -227,5 +232,24 @@
         font-weight: bold;
       }
     }
+  }
+}
+
+#modal-login{
+  display: none;
+  &.active{
+    display: block;
+  }
+}
+#modal-register{
+  display: none;
+  &.active{
+    display: block;
+  }
+}
+#modal-reset{
+  display: none;
+  &.active{
+    display: block;
   }
 }

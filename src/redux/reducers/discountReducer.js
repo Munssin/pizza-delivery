@@ -1,5 +1,5 @@
-import {INCREASE_COUNT, REDUCE_COUNT} from "../types";
 import PizzaIMG from "../../img/887590c4.jpeg";
+import {FETCH_PIZZA} from "../types";
 
 const dataDiscount = [
     {
@@ -43,15 +43,15 @@ const initialState = {
 
 export const discountReducer = (state = initialState, action) => {
     switch (action.type) {
-        case INCREASE_COUNT:
+        case FETCH_PIZZA:
             return {
                 ...state,
-                count: action.payload.number,
+                count: action.payload.pizza,
             };
-        case REDUCE_COUNT:
+        case FETCH_PIZZA:
             return {
                 ...state,
-                count: action.payload.number,
+                count: action.payload.pizza,
             };
         default: return state;
     }

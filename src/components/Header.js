@@ -1,20 +1,55 @@
 import React, {useState} from "react";
 import Nav from "./Nav";
 import {Link} from "react-router-dom";
-import ButtonComponet from './UI/button/ButtonComponet'
-import ModalComponent from './UI/modal/ModalComponent'
-import ModalBasket from './UI/modal/ModalBasket'
-import useScrollHandler from "../../src/helpers/useScrollHandler";
+import ButtonComponet from './UI/button/ButtonComponet';
+import ModalComponent from './UI/modal/ModalComponent';
+import ModalBasket from './UI/modal/ModalBasket';
+import useScrollHandler from "../helpers/hooks/useScrollHandler";
 import "../css/header.scss";
-import Logo from "../img/logo.png"
-import basket from "../img/bas.png"
+import Logo from "../img/logo.png";
+import basket from "../img/bas.png";
 
 const Header = (props) => {
     const headerNameClass = `header ${useScrollHandler()}`;
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // const [formLogin, setFormLogin] = useState('active');
+    // const [formRegister, setFormRegister] = useState('');
+    // const [formReset, setFormReset] = useState('');
+
+    // const showLogin = () => {
+    //     if (formLogin === '' && (formRegister === 'active' || setFormReset === 'active')){
+    //         setFormLogin('active');
+    //         setFormRegister('');
+    //         setFormReset('');
+    //     }
+    // }
+    // const showRegister = () => {
+    //     if (formRegister === '' && formLogin === 'active'){
+    //         setFormLogin('');
+    //         setFormRegister('active');
+    //     } else {
+    //         setFormLogin('active');
+    //         setFormRegister('');
+    //     }
+    // }
+    // const showReset = () => {
+    //     if (formReset === '' && formLogin === 'active'){
+    //         setFormLogin('');
+    //         setFormReset('active');
+    //     } else {
+    //         setFormLogin('active');
+    //         setFormReset('');
+    //     }
+    // }
+
+
     const openModal = () => {
         setIsModalOpen(true);
+        // showLogin()
+        // showRegister()
+        // showReset()
     }
     const closeModal = () => {
         setIsModalOpen(false);
@@ -46,7 +81,13 @@ const Header = (props) => {
                     </div>
                 </div>
             </header>
-            <ModalComponent closeModal={closeModal} isOpen={isModalOpen}/>
+            <ModalComponent
+                closeModal={closeModal}
+                isOpen={isModalOpen}
+                inShowLogin={true}
+                inShowRegister={false}
+                inShowReset={false}
+            />
 
             <ModalBasket closeBasket={closeBasket} isBasketOpen={isBasketOpen}/>
         </div>

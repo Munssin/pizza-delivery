@@ -1,9 +1,7 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 
-import {useDispatch, useSelector} from "react-redux";
-
-import {INCREASE_COUNT, REDUCE_COUNT} from "../redux/types";
+import {useSelector} from "react-redux";
 
 // import BannerMain from "UI/BannerMain";
 import FilterPizza from "./FilterPizza";
@@ -13,16 +11,33 @@ import PizzaIMG from "../img/887590c4.jpeg"
 import ButtonComponet from "./UI/button/ButtonComponet";
 
 import Swiper from "./UI/carousel/Swiper";
+import {useEffect} from "react";
+import {useActions} from "../helpers/hooks/useActions";
+import {fetchPizza} from "../redux/actions/pizzaActions";
 
 
 const PizzaPage = (props) => {
+    const getPizza = useActions(fetchPizza)
+
     const pizzasData = useSelector(state => state.pizza.data);
+    console.log("pizzasData " , pizzasData);
+
     const [filteredPizzasData, setFilteredPizzasData] = useState(pizzasData);
 
-    const dispatch = useDispatch();
+    useEffect(() => {
+        getPizza();
+    }, [getPizza]);
+
+    useEffect(() => {
+        setFilteredPizzasData(pizzasData);
+    }, [pizzasData]);
+
+    console.log("before filteredPizzasData " , filteredPizzasData);
 
     const renderCard = () => {
-       return filteredPizzasData.map(item => {
+        console.log('filteredPizzasData ', filteredPizzasData);
+
+        return filteredPizzasData.map(item => {
           return <Card
           type={item.type}
           key={item.id}

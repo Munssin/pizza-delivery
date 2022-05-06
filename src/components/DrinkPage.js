@@ -1,18 +1,28 @@
 import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
-import {INCREASE_COUNT, REDUCE_COUNT} from "../redux/types";
-
 import FilterDrink from "./FilterDrink";
 import DrinkCard from "./UI/DrinkCard";
 import PizzaIMG from "../img/887590c4.jpeg"
 
+import {useEffect} from "react";
+import {useActions} from "../helpers/hooks/useActions";
+import {fetchDrink} from "../redux/actions/drinkActions";
+import {fetchPizza} from "../redux/actions/pizzaActions";
 
 const DrinkPage = (props) => {
-    const drinksData = useSelector(state => state.drink.data);
-    const [filteredDrinkData, setFilteredDrinkData] = useState(drinksData);
+    const getDrink = useActions(fetchDrink)
 
-    const dispatch = useDispatch();
+    const drinksData = useSelector(state => state.drink.data);
+    const [filteredDrinkData, setFilteredDrinksData] = useState(drinksData);
+
+    useEffect(() => {
+        getDrink();
+    }, [getDrink]);
+
+    useEffect(() => {
+        setFilteredDrinksData(drinksData);
+    }, [drinksData]);
 
     const renderCard = () => {
         return filteredDrinkData.map(item => {
@@ -28,7 +38,7 @@ const DrinkPage = (props) => {
 
     const onSortDrink = (category) => {
         const updatedContent = drinksData.filter(item => category === "All" ? item : item.category === category);
-        setFilteredDrinkData(updatedContent);
+        setFilteredDrinksData(updatedContent);
     }
 
     return (
