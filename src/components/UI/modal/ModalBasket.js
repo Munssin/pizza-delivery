@@ -4,7 +4,6 @@ import {Link} from "react-router-dom";
 import Button from "@atlaskit/button";
 import "./modal.scss";
 import ButtonComponet from "../button/ButtonComponet";
-import smallCard from "./SmallCard";
 import SmallCard from "./SmallCard";
 
 const ModalBasket = ({isBasketOpen, closeBasket}) => {

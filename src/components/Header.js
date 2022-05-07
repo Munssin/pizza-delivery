@@ -14,42 +14,9 @@ const Header = (props) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    // const [formLogin, setFormLogin] = useState('active');
-    // const [formRegister, setFormRegister] = useState('');
-    // const [formReset, setFormReset] = useState('');
-
-    // const showLogin = () => {
-    //     if (formLogin === '' && (formRegister === 'active' || setFormReset === 'active')){
-    //         setFormLogin('active');
-    //         setFormRegister('');
-    //         setFormReset('');
-    //     }
-    // }
-    // const showRegister = () => {
-    //     if (formRegister === '' && formLogin === 'active'){
-    //         setFormLogin('');
-    //         setFormRegister('active');
-    //     } else {
-    //         setFormLogin('active');
-    //         setFormRegister('');
-    //     }
-    // }
-    // const showReset = () => {
-    //     if (formReset === '' && formLogin === 'active'){
-    //         setFormLogin('');
-    //         setFormReset('active');
-    //     } else {
-    //         setFormLogin('active');
-    //         setFormReset('');
-    //     }
-    // }
-
 
     const openModal = () => {
         setIsModalOpen(true);
-        // showLogin()
-        // showRegister()
-        // showReset()
     }
     const closeModal = () => {
         setIsModalOpen(false);
@@ -84,9 +51,6 @@ const Header = (props) => {
             <ModalComponent
                 closeModal={closeModal}
                 isOpen={isModalOpen}
-                inShowLogin={true}
-                inShowRegister={false}
-                inShowReset={false}
             />
 
             <ModalBasket closeBasket={closeBasket} isBasketOpen={isBasketOpen}/>

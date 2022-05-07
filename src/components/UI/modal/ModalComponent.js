@@ -5,79 +5,52 @@ import ButtonComponet from "../button/ButtonComponet";
 import InputComponent from "../input/inputComponent";
 import {useState} from "react";
 
-const ModalComponet = ({isOpen, closeModal, inShowLogin, inShowRegister, inShowReset}) => {
-    // const [formLogin, setFormLogin] = useState('active');
-    // const [formRegister, setFormRegister] = useState('');
-    // const [formReset, setFormReset] = useState('');
+const ModalComponet = ({isOpen, closeModal}) => {
+    const [formLogin, setFormLogin] = useState('active');
+    const [formRegister, setFormRegister] = useState('');
+    const [formReset, setFormReset] = useState('');
 
-    // const showRegister = () => {
-    //     if (formRegister === '' && formLogin === 'active'){
-    //         setFormLogin('');
-    //         setFormRegister('active');
-    //     } else {
-    //         setFormLogin('active');
-    //         setFormRegister('');
-    //     }
-    // }
-    // const showReset = () => {
-    //     if (formReset === '' && formLogin === 'active'){
-    //         setFormLogin('');
-    //         setFormReset('active');
-    //     } else {
-    //         setFormLogin('active');
-    //         setFormReset('');
-    //     }
-    // }
-
-
-    // const showLogin = () => {
-    //     if (inShowLogin === false && (inShowRegister === true || inShowReset === true)){
-    //         inShowLogin = true;
-    //         inShowRegister = false;
-    //         inShowReset = false;
-    //     }
-    // }
-    const showLogin = () => {
-        if (isOpen === true){
-            inShowLogin = true;
-            inShowRegister = false;
-            inShowReset = false;
-        } else {
-            inShowLogin = false;
-            inShowRegister = false;
-            inShowReset = false;
-        }
-    }
     const showRegister = () => {
-        if (inShowRegister === false && inShowLogin === true){
-            inShowLogin = false;
-            inShowRegister = true;
-            console.log('showRegister IF ' + inShowRegister);
-
+        if (formRegister === '' && formLogin === 'active'){
+            setFormLogin('');
+            setFormRegister('active');
         } else {
-            inShowLogin = true;
-            inShowRegister = false;
-            console.log('showRegister Else ' + inShowRegister);
-
+            setFormLogin('active');
+            setFormRegister('');
         }
     }
     const showReset = () => {
-        if (inShowReset === false && inShowLogin === true){
-            inShowLogin = false;
-            inShowReset = true;
-            console.log('showReset IF ' + inShowReset);
+        if (formReset === '' && formLogin === 'active'){
+            setFormLogin('');
+            setFormReset('active');
         } else {
-            inShowLogin = true;
-            inShowReset = false;
-            console.log('showReset Else ' + inShowReset);
+            setFormLogin('active');
+            setFormReset('');
         }
+    }
+    const showLogin = () => {
+        if (formReset === 'active' || formRegister === 'active'){
+            setFormReset('');
+            setFormRegister('');
+            setFormLogin('active');
+        } else {
+            setFormLogin('');
+            setFormRegister('');
+            setFormReset('');
+        }
+    }
+    const resetForm = () => {
+            setFormReset('');
+            setFormRegister('');
+            setFormLogin('active');
+            console.log(resetForm);
     }
 
 
     return (
         <div className={`modal ${isOpen ? 'modal-open':''}`}>
             <div onClick={closeModal} className="overlay"></div>
-            <form action="" id="modal-login" className={`modal-form ${inShowLogin ? 'active' : ''}`}>
+            <form action="" id="modal-login" className={`modal-form ${formLogin ? 'active' : ''}`}>
                 <div onClick={closeModal} className="close-btn"></div>
                 <h3>Вхід</h3>
                 <div className="register">У вас ще немає акаунту? <span onClick={showRegister} className='link'>Зареєструйтесь</span></div>
@@ -102,7 +75,7 @@ const ModalComponet = ({isOpen, closeModal, inShowLogin, inShowRegister, inShowR
                     </div>
                 </div>
             </form>
-            <form action="" id="modal-register" className={`modal-form ${inShowRegister ? 'active':''}`}>
+            <form action="" id="modal-register" className={`modal-form ${formRegister ? 'active':''}`}>
                 <div onClick={closeModal} className="close-btn"></div>
                 <h3>Реєстрація</h3>
                 <div className="register">У вас вже є акаунту? <span onClick={showLogin} className="link">Увійти</span></div>
@@ -130,7 +103,7 @@ const ModalComponet = ({isOpen, closeModal, inShowLogin, inShowRegister, inShowR
                 <ButtonComponet buttonType='submit' buttonName='Зареєструватись'/>
 
             </form>
-            <form action="" id="modal-reset" className={`modal-form ${inShowReset ? 'active':''}`}>
+            <form action="" id="modal-reset" className={`modal-form ${formReset ? 'active':''}`}>
                 <div onClick={closeModal} className="close-btn"></div>
                 <h3>Відновлення паролю</h3>
                 <div className="register">Згадали пароль? <span onClick={showLogin} className="link">Увійти</span></div>

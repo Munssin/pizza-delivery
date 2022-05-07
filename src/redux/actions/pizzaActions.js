@@ -5,6 +5,7 @@ import {ApiService} from "../../helpers/api-service";
 
 export const fetchPizza = () => ({
     type: FETCH_PIZZA,
+    // payload: data
 })
 
 function* fetchPizzaWorker() {

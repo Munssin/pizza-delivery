@@ -9,6 +9,7 @@ import SalatCard from "./UI/SalatCard";
 import PizzaIMG from "../img/887590c4.jpeg"
 import Card from "./UI/Card";
 
+import {fetchSalat} from "../redux/actions/salatActions";
 
 class SalatPage extends Component{
 
@@ -16,7 +17,12 @@ class SalatPage extends Component{
         super(props);
 
         this.state = {};
-        this.renderCard = this.renderCard.bind(this);
+        // this.renderCard = this.renderCard.bind(this);
+    }
+
+    componentDidMount() {
+        const {fetchSalat} = this.props;
+        fetchSalat();
     }
 
     renderCard = () => {
@@ -51,10 +57,8 @@ class SalatPage extends Component{
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-
-    }
+const mapDispatchToProps = {
+    fetchSalat
 }
 
 const mapStateToProps = (state) => {

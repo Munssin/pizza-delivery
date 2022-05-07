@@ -1,4 +1,4 @@
-import {FETCH_DRINK_STARTED, FETCH_PIZZA_STARTED} from "../types";
+import {FETCH_DRINK_STARTED} from "../types";
 
 // const dataDrink = [
         // {
@@ -38,7 +38,6 @@ const initialState = {
 export const drinkReducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_DRINK_STARTED:
-            console.log(action.payload.drink);
             return {
                 ...state,
                 data: action.payload.drink,

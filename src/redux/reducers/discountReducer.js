@@ -43,16 +43,16 @@ const initialState = {
 
 export const discountReducer = (state = initialState, action) => {
     switch (action.type) {
-        case FETCH_PIZZA:
-            return {
-                ...state,
-                count: action.payload.pizza,
-            };
-        case FETCH_PIZZA:
-            return {
-                ...state,
-                count: action.payload.pizza,
-            };
+        // case FETCH_PIZZA:
+        //     return {
+        //         ...state,
+        //         count: action.payload.pizza,
+        //     };
+        // case FETCH_PIZZA:
+        //     return {
+        //         ...state,
+        //         count: action.payload.pizza,
+        //     };
         default: return state;
     }
 };

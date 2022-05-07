@@ -20,7 +20,6 @@ const PizzaPage = (props) => {
     const getPizza = useActions(fetchPizza)
 
     const pizzasData = useSelector(state => state.pizza.data);
-    console.log("pizzasData " , pizzasData);
 
     const [filteredPizzasData, setFilteredPizzasData] = useState(pizzasData);
 
@@ -32,10 +31,7 @@ const PizzaPage = (props) => {
         setFilteredPizzasData(pizzasData);
     }, [pizzasData]);
 
-    console.log("before filteredPizzasData " , filteredPizzasData);
-
     const renderCard = () => {
-        console.log('filteredPizzasData ', filteredPizzasData);
 
         return filteredPizzasData.map(item => {
           return <Card
