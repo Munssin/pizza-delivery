@@ -53,7 +53,10 @@ const Header = (props) => {
                 isOpen={isModalOpen}
             />
 
-            <ModalBasket closeBasket={closeBasket} isBasketOpen={isBasketOpen}/>
+            <ModalBasket
+                closeBasket={closeBasket}
+                isBasketOpen={isBasketOpen}
+            />
         </div>
 
     );
