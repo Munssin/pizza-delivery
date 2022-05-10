@@ -1,47 +1,45 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-const FilterPizza = ({pizzasData, onSortPizza}) => {
-    const [sort, setSort] = useState('');
+const FilterPizza = ({ onSortPizza }) => {
     const [tabs, setTabs] = useState([
         {
             id: 1,
             name: "Усі",
             category: 'All',
-            status: true
-         },
+            status: true,
+        },
         {
             id: 2,
             name: "Вегетаріанська",
             category: 'vegetarian',
-            status: false
+            status: false,
         },
         {
             id: 3,
             name: "Рибна",
             category: 'fish',
-            status: false
+            status: false,
         },
         {
             id: 4,
             name: "М'ясна",
             category: 'meat',
-            status: false
-        }
+            status: false,
+        },
     ]);
 
-    const onFilterPizza = (category) => {
-        const updatedContent = pizzasData.filter(item => category === "All" ? item : item.category === category);
-
+    const onFilterPizza = category => {
         const updatedTabs = tabs.map(item => {
             if (item.category === category){
                 return {...item, status: true}
             } else {
-               return {...item, status: false}
+                return {...item, status: false}
             }
         });
+
         setTabs(updatedTabs);
         onSortPizza(category);
-    }
+    };
 
     return (
         <div className="filter-container">
