@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-// import ButtonComponet from "./UI/button/ButtonComponet";
 
 const FilterPizza = ({pizzasData, onSortPizza}) => {
     const [sort, setSort] = useState('');

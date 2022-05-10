@@ -10,6 +10,6 @@ export const rootReducer = combineReducers({
     drink: drinkReducer,
     salat: salatReducer,
     discount: discountReducer,
-    basket: basketReducer
+    basket: basketReducer,
 })
 

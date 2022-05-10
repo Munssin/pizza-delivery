@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-// import ButtonComponet from "./UI/button/ButtonComponet";
 
 const FilterDrink = ({drinksData, onSortDrink}) => {
     const [sort, setSort] = useState('');

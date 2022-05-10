@@ -1,14 +1,12 @@
 import React, {useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 
 import FilterDrink from "./FilterDrink";
 import DrinkCard from "./UI/DrinkCard";
-import PizzaIMG from "../img/887590c4.jpeg"
 
 import {useEffect} from "react";
 import {useActions} from "../helpers/hooks/useActions";
 import {fetchDrink} from "../redux/actions/drinkActions";
-import {fetchPizza} from "../redux/actions/pizzaActions";
 
 const DrinkPage = (props) => {
     const getDrink = useActions(fetchDrink)

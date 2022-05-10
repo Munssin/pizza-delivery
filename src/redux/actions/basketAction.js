@@ -1,4 +1,9 @@
-import {ADD_PRODUCT_TO_BASKET, ADD_PRODUCT_TO_BASKET_STARTED} from "../types";
+import {
+    ADD_PRODUCT_TO_BASKET,
+    ADD_PRODUCT_TO_BASKET_STARTED,
+    FETCH_PRODUCT_ITEMS,
+    FETCH_PRODUCT_ITEMS_STARTED
+} from "../types";
 import {all, call, fork, put, takeEvery} from "redux-saga/effects";
 import {ApiService} from "../../helpers/api-service";
 
@@ -26,9 +31,18 @@ function* addProductToWatcher(){
 }
 
 
-function* fetchBasketWorker(){}
+function* fetchBasketWorker(){
+    const data = yield call(ApiService.load, "dataBasket");
+    yield put({
+        type: FETCH_PRODUCT_ITEMS_STARTED,
+        payload: {item: data},
+    })
+    console.log(data);
+}
 
-function* fetchBasketWatcher(){}
+function* fetchBasketWatcher(){
+    yield takeEvery(FETCH_PRODUCT_ITEMS, fetchBasketWorker)
+}
 
 export function* basketWatcher(){
     yield all([

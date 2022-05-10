@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "@atlaskit/button";
 import "./modal.scss";
 import ButtonComponet from "../button/ButtonComponet";
 import InputComponent from "../input/inputComponent";

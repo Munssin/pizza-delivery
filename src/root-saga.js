@@ -9,6 +9,6 @@ export function* rootSaga() {
         fork(pizzaWatcher),
         fork(drinkWatcher),
         fork(salatWatcher),
-        fork(basketWatcher)
+        fork(basketWatcher),
     ])
 }

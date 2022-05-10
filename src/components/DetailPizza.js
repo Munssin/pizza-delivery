@@ -1,24 +1,17 @@
-import React, {useState} from "react";
+import React from "react";
 import {useParams} from "react-router-dom";
 
 import {useDispatch, useSelector} from "react-redux";
 
-import FilterPizza from "./FilterPizza";
-import Card from "./UI/Card";
-
 import "../css/product-detail.scss";
 
-import PizzaIMG from "../img/887590c4.jpeg"
 import ButtonComponet from "./UI/button/ButtonComponet";
 
-import Swiper from "./UI/carousel/Swiper";
-import DrinkCard from "./UI/DrinkCard";
 import SliderAlso from "./UI/carousel/SliderAlso";
 
 
 const DetailPizza = (props) => {
     const match = useParams();
-    console.log(match)
 
     const pizzasData = useSelector(state => state.pizza.data);
 

@@ -1,7 +1,5 @@
 import React from "react";
-import Nav from "./Nav";
 import {Link} from "react-router-dom";
-import ButtonComponet from './UI/button/ButtonComponet'
 import "../css/footer.scss";
 import Logo from "../img/logo.png"
 

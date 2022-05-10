@@ -1,12 +1,39 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import Button from "@atlaskit/button";
+import {useSelector} from "react-redux";
+
 import "./modal.scss";
-import ButtonComponet from "../button/ButtonComponet";
 import SmallCard from "./SmallCard";
 
+import {useEffect} from "react";
+import {useActions} from "../../../helpers/hooks/useActions";
+
+
+
 const ModalBasket = ({isBasketOpen, closeBasket}) => {
+    // const getItem = useActions(fetchItem)
+    //
+    // const itemData = useSelector(state => state.item.data);
+    //
+    // useEffect(() => {
+    //     getItem();
+    // }, [getItem]);
+
+
+    // const renderSmallCard = () => {
+    //     return itemData.map(item => {
+    //         return <SmallCard
+    //             type={item.type}
+    //             key={item.id}
+    //             id={item.id}
+    //             img={item.img}
+    //             title={item.title}
+    //             description={item.description}
+    //             price={item.price}
+    //         />;
+    //     })
+    // };
 
     return (
     <div className={`modal-basket ${isBasketOpen ? 'basket-open':''}`}>
@@ -14,9 +41,7 @@ const ModalBasket = ({isBasketOpen, closeBasket}) => {
         <div className="basket-container">
             <h5>Ваше замовлення:</h5>
             <div className="basket-form">
-                <SmallCard />
-                <SmallCard />
-                <SmallCard />
+                {/*{renderSmallCard()}*/}
             </div>
             <div className="basket-all">
                 <div className="total">

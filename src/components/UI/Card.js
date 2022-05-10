@@ -13,7 +13,6 @@ const Card = (props) => {
 
     const addToBasket = () => {
         pushProductToBasket(props);
-        // console.log(props.title);
     }
 
     return (

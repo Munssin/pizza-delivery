@@ -2,11 +2,6 @@ import React, {Component} from "react";
 
 import { connect } from "react-redux";
 
-import {INCREASE_COUNT, REDUCE_COUNT} from "../redux/types"
-
-import ConstructorPizza from "./ConstructorPizza";
-import SalatCard from "./UI/SalatCard";
-import PizzaIMG from "../img/887590c4.jpeg"
 import Card from "./UI/Card";
 
 import {fetchSalat} from "../redux/actions/salatActions";
@@ -17,7 +12,6 @@ class SalatPage extends Component{
         super(props);
 
         this.state = {};
-        // this.renderCard = this.renderCard.bind(this);
     }
 
     componentDidMount() {

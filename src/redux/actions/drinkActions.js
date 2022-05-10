@@ -13,7 +13,6 @@ function* fetchDrinkWorker() {
         type: FETCH_DRINK_STARTED,
         payload: {drink: data},
     })
-    console.log(data);
 }
 
 function* fetchDrinkWatcher() {

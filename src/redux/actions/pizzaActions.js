@@ -5,7 +5,6 @@ import {ApiService} from "../../helpers/api-service";
 
 export const fetchPizza = () => ({
     type: FETCH_PIZZA,
-    // payload: data
 })
 
 function* fetchPizzaWorker() {
@@ -14,7 +13,6 @@ function* fetchPizzaWorker() {
         type: FETCH_PIZZA_STARTED,
         payload: {pizza: data},
     })
-    console.log(data);
 }
 
 function* fetchPizzaWatcher() {

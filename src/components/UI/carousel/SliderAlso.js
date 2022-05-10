@@ -5,13 +5,9 @@ import "swiper/css/navigation";
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import './carousel.css';
-import { Navigation } from "swiper";
 
 import {useDispatch, useSelector} from "react-redux";
-import Card from "../Card";
 import DrinkCard from "../DrinkCard";
-import DiscountPage from "../../DiscountsPage";
-
 
 const SliderAlso = (props) => {
     const drinksData = useSelector(state => state.drink.data);
@@ -34,10 +30,6 @@ const SliderAlso = (props) => {
             spaceBetween={30}
             slidesPerView={2}
             navigation={true}
-            // pagination={{ clickable: true }}
-            // autoplay={ true }
-            // onSlideChange={() => console.log('slide change')}
-            // onSwiper={(swiper) => console.log(swiper)}
             className="mySwiper"
         >
                 {renderCard()}

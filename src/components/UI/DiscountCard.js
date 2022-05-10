@@ -1,5 +1,4 @@
 import React from "react";
-import ButtonComponet from "./button/ButtonComponet";
 
 const DiscountCard = (props) => {
     const {img, listTitle} = props;

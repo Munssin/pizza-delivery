@@ -1,14 +1,9 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
 
 import {useSelector} from "react-redux";
 
-// import BannerMain from "UI/BannerMain";
 import FilterPizza from "./FilterPizza";
-import ConstructorPizza from "./ConstructorPizza";
 import Card from "./UI/Card";
-import PizzaIMG from "../img/887590c4.jpeg"
-import ButtonComponet from "./UI/button/ButtonComponet";
 
 import Swiper from "./UI/carousel/Swiper";
 import {useEffect} from "react";
@@ -61,7 +56,6 @@ const PizzaPage = (props) => {
             </div>
 
             <FilterPizza onSortPizza={onSortPizza} pizzasData={pizzasData}/>
-            {/*<ConstructorPizza/>*/}
             <div className="catalog">
                 <div className="catalog-container">
                     {renderCard()}
