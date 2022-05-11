@@ -2,11 +2,19 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 import "./modal.scss";
+import {useActions} from "../../../helpers/hooks/useActions";
+import { deleteProductFromBasket} from "../../../redux/actions/basketAction";
 
 const SmallCard = (props) => {
     const {type, id, img, title, description, size, weight, price} = props;
     const dynamicPath = type === 'pizza' ? `/detail-pizza/${id}` : '';
 
+    const removeProductFromBasket = useActions(deleteProductFromBasket);
+
+
+    const deleteFromBasket = () => {
+        removeProductFromBasket(props);
+    }
     return (
         <div className="basket-item">
             <Link to="/">
@@ -22,6 +30,7 @@ const SmallCard = (props) => {
                 <div className="product-price">{price} грн</div>
                 <div
                     className="remove-item"
+                    onClick={ () => deleteFromBasket(props) }
                 >
                     Видалити
                 </div>

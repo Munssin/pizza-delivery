@@ -132,21 +132,24 @@
   ],
   "dataBasket": [
     {
-      "img": "src/img/887590c4.jpeg",
-      "title": "З бастурмою",
-      "description": "салат Айсберг, бастурма, перець болгарський, помідори чері, фета, горіхи кеш'ю, соус",
-      "price": "120",
-      "id": 1
-    },
-    {
       "type": "pizza",
-      "id": 2,
+      "id": 3,
       "img": "./src/img/887590c4.jpeg",
-      "title": "Salmone",
-      "description": "'томат, моцарела, морепродукти, лимон, sadsadasd asd as пармезан',",
+      "title": "anasda",
+      "description": "томат, моцарела, пармезан",
       "size": "35",
       "weight": "450",
       "price": "220"
+    },
+    {
+      "type": "pizza",
+      "id": 1,
+      "img": "/src/img/887590c4.jpeg",
+      "title": "Frutti di mare",
+      "description": "томат, моцарела, морепродукти, лимон, пармезан",
+      "size": "30",
+      "weight": "350",
+      "price": "200"
     },
     {
       "type": "pizza",
@@ -157,6 +160,16 @@
       "size": "32",
       "weight": "250",
       "price": "190"
+    },
+    {
+      "type": "pizza",
+      "id": 2,
+      "img": "./src/img/887590c4.jpeg",
+      "title": "Salmone",
+      "description": "'томат, моцарела, морепродукти, лимон, sadsadasd asd as пармезан',",
+      "size": "35",
+      "weight": "450",
+      "price": "220"
     }
   ]
 }
