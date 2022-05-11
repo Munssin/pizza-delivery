@@ -19,7 +19,7 @@ const ModalBasket = ({isBasketOpen, closeBasket}) => {
     useEffect(() => {
         getProducts();
     }, [getProducts]);
-
+    // console.log(basketDataItems);
     const renderSmallCard = () => {
         return basketDataItems.map(item => {
             return <SmallCard
@@ -34,6 +34,14 @@ const ModalBasket = ({isBasketOpen, closeBasket}) => {
         })
     };
 
+
+    let initialCount = 0;
+    let sum = basketDataItems.reduce(
+        (accumulator, currentValue) => accumulator + currentValue.price,
+        initialCount
+    );
+
+
     return (
     <div className={`modal-basket ${isBasketOpen ? 'basket-open':''}`}>
         <div onClick={closeBasket} className="basket-overlay"></div>
@@ -45,7 +53,7 @@ const ModalBasket = ({isBasketOpen, closeBasket}) => {
             <div className="basket-all">
                 <div className="total">
                     Всього до оплати:
-                    <span className="total__price">447 грн</span>
+                    <span className="total__price">{sum} грн</span>
                 </div>
             </div>
             <Link to="checkout">Перейти до замовлення</Link>

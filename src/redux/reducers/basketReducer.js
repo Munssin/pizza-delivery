@@ -22,9 +22,10 @@ export default (state = initialState, {type, payload}) => {
                 basketData: payload.product,
             };
         case DELETE_PRODUCT_ITEMS_STARTED:
+            console.log(payload.productId);
             return {
                 ...state,
-                basketData: [...state.basketData.filter((item, id) => id !== payload.product)]
+                basketData: state.basketData.filter((item) => item.id !== payload.productId)
             }
         default:
             return state

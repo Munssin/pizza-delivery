@@ -8,6 +8,7 @@ import useScrollHandler from "../helpers/hooks/useScrollHandler";
 import "../css/header.scss";
 import Logo from "../img/logo.png";
 import basket from "../img/bas.png";
+import {useSelector} from "react-redux";
 
 const Header = (props) => {
     const headerNameClass = `header ${useScrollHandler()}`;
@@ -29,6 +30,11 @@ const Header = (props) => {
     const closeBasket = () => {
         setIsBasketOpen(false);
     }
+
+    const basketDataItems = useSelector(state => state.basket.basketData);
+
+    let productsInBasket = basketDataItems.length;
+
     return (
         <div>
             <header  className={headerNameClass}>
@@ -43,7 +49,7 @@ const Header = (props) => {
                     <ButtonComponet onClick={openModal} buttonName='Вхід'/>
                     <div onClick={openBasket} className="header-basket">
                         <img src={basket} alt=""/>
-                        <span className="header-basket__calck">1</span>
+                        <span className="header-basket__calck">{productsInBasket}</span>
                         КОШИК
                     </div>
                 </div>

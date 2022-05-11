@@ -14,6 +14,7 @@ export const addProductToBasket = (product) => ({
      payload: {product}
 })
 
+
 export const fetchProductToBasket = () => ({
      type: FETCH_PRODUCT_ITEMS,
 })
@@ -55,12 +56,12 @@ function* fetchBasketWatcher(){
 }
 
 function* deleteProductFromBasketWorker(dataDeleteProduct){
-    console.log(dataDeleteProduct)
+    const productId = dataDeleteProduct.payload.product.id;
     try {
-        const data = yield call(ApiService.remove, "dataBasket", dataDeleteProduct.payload.product);
+        yield call(ApiService.remove, `dataBasket/${productId}`);
         yield put({
             type: DELETE_PRODUCT_ITEMS_STARTED,
-            payload: {product: data},
+            payload: {productId},
         })
     } catch (error){
         console.log(error);
