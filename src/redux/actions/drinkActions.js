@@ -1,5 +1,5 @@
 import {all, fork, takeEvery, call, put} from "redux-saga/effects";
-import {FETCH_DRINK, FETCH_DRINK_STARTED} from "../types";
+import {FETCH_DRINK, FETCH_DRINK_SUCCESS} from "../types";
 import {ApiService} from "../../helpers/api-service";
 
 
@@ -10,7 +10,7 @@ export const fetchDrink = () => ({
 function* fetchDrinkWorker() {
     const data = yield call(ApiService.load, "dataDrink");
     yield put({
-        type: FETCH_DRINK_STARTED,
+        type: FETCH_DRINK_SUCCESS,
         payload: {drink: data},
     })
 }

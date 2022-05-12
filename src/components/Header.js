@@ -10,11 +10,11 @@ import Logo from "../img/logo.png";
 import basket from "../img/bas.png";
 import {useSelector} from "react-redux";
 
-const Header = (props) => {
+const Header = () => {
     const headerNameClass = `header ${useScrollHandler()}`;
+    const basketDataItems = useSelector(state => state.basket.basketData);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
-
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -30,8 +30,6 @@ const Header = (props) => {
     const closeBasket = () => {
         setIsBasketOpen(false);
     }
-
-    const basketDataItems = useSelector(state => state.basket.basketData);
 
     return (
         <div>

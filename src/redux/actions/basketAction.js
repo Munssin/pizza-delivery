@@ -1,10 +1,10 @@
 import {
     ADD_PRODUCT_TO_BASKET,
-    ADD_PRODUCT_TO_BASKET_STARTED,
+    ADD_PRODUCT_TO_BASKET_SUCCESS,
     FETCH_PRODUCT_ITEMS,
-    FETCH_PRODUCT_ITEMS_STARTED,
+    FETCH_PRODUCT_ITEMS_SUCCESS,
     DELETE_PRODUCT_ITEMS,
-    DELETE_PRODUCT_ITEMS_STARTED
+    DELETE_PRODUCT_ITEMS_SUCCESS
 } from "../types";
 import {all, call, fork, put, takeEvery} from "redux-saga/effects";
 import {ApiService} from "../../helpers/api-service";
@@ -29,7 +29,7 @@ function* addProductToBasketWorker(dataProduct){
     try {
         const data = yield call(ApiService.create, "dataBasket", dataProduct.payload.product);
         yield put({
-            type: ADD_PRODUCT_TO_BASKET_STARTED,
+            type: ADD_PRODUCT_TO_BASKET_SUCCESS,
             payload: {product: data},
         })
     } catch (error){
@@ -37,7 +37,7 @@ function* addProductToBasketWorker(dataProduct){
     }
 }
 
-function* addProductToWatcher(){
+function* addProductToBasketWatcher(){
     yield takeEvery(ADD_PRODUCT_TO_BASKET, addProductToBasketWorker)
 }
 
@@ -46,7 +46,7 @@ function* fetchBasketWorker(){
     // console.log(basketData);
 
     yield put({
-        type: FETCH_PRODUCT_ITEMS_STARTED,
+        type: FETCH_PRODUCT_ITEMS_SUCCESS,
         payload: {product: basketData},
     })
 }
@@ -60,7 +60,7 @@ function* deleteProductFromBasketWorker(dataDeleteProduct){
     try {
         yield call(ApiService.remove, `dataBasket/${productId}`);
         yield put({
-            type: DELETE_PRODUCT_ITEMS_STARTED,
+            type: DELETE_PRODUCT_ITEMS_SUCCESS,
             payload: {productId},
         })
     } catch (error){
@@ -74,7 +74,7 @@ function* deleteProductFromBasketWatcher(){
 
 export function* basketWatcher(){
     yield all([
-        fork(addProductToWatcher),
+        fork(addProductToBasketWatcher),
         fork(fetchBasketWatcher),
         fork(deleteProductFromBasketWatcher),
     ])

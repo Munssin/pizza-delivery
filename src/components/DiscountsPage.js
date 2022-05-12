@@ -1,14 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 import {useSelector} from "react-redux";
-
 import DiscountCard from "./UI/DiscountCard";
 import "../css/discount.scss";
 
-const DiscountPage = (props) => {
-
+const DiscountPage = () => {
     const discountData = useSelector(state => state.discount.data);
-
-
     const renderDiscountCard = () => {
         return discountData.map(item => {
             return <DiscountCard

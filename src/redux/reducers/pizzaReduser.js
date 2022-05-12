@@ -1,4 +1,4 @@
-import {FETCH_PIZZA_STARTED} from "../types";
+import {FETCH_PIZZA_SUCCESS} from "../types";
 
 const initialState = {
     data: [],
@@ -6,7 +6,7 @@ const initialState = {
 
 export const pizzaReducer = (state = initialState, action) => {
     switch (action.type) {
-        case FETCH_PIZZA_STARTED:
+        case FETCH_PIZZA_SUCCESS:
             return {
                 ...state,
                 data: action.payload.pizza,

@@ -1,8 +1,8 @@
 
 import {
-    ADD_PRODUCT_TO_BASKET_STARTED,
-    FETCH_PRODUCT_ITEMS_STARTED,
-    DELETE_PRODUCT_ITEMS_STARTED
+    ADD_PRODUCT_TO_BASKET_SUCCESS,
+    FETCH_PRODUCT_ITEMS_SUCCESS,
+    DELETE_PRODUCT_ITEMS_SUCCESS
 } from "../types";
 
 const initialState = {
@@ -11,22 +11,21 @@ const initialState = {
 
 export default (state = initialState, {type, payload}) => {
     switch (type){
-        case ADD_PRODUCT_TO_BASKET_STARTED:
+        case ADD_PRODUCT_TO_BASKET_SUCCESS:
             return {
                 ...state,
                 basketData: [...state.basketData, payload.product]
             };
-        case FETCH_PRODUCT_ITEMS_STARTED:
+        case FETCH_PRODUCT_ITEMS_SUCCESS:
             return {
                 ...state,
                 basketData: payload.product,
             };
-        case DELETE_PRODUCT_ITEMS_STARTED:
-            console.log(payload.productId);
+        case DELETE_PRODUCT_ITEMS_SUCCESS:
             return {
                 ...state,
                 basketData: state.basketData.filter((item) => item.id !== payload.productId)
-            }
+            };
         default:
             return state
     }
