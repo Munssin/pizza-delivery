@@ -5,7 +5,6 @@ import {useActions} from "../helpers/hooks/useActions";
 import FilterPizza from "./FilterPizza";
 import Card from "./UI/Card";
 import Swiper from "./UI/carousel/Swiper";
-import "../css/main.scss";
 
 import {fetchPizza} from "../redux/actions/pizzaActions";
 

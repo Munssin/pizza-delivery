@@ -5,18 +5,6 @@
 }
 .checkout-info{
   width: 50%;
-  .link-home{
-    color: rgba(36, 28, 21, 0.54);
-    font-size: 18px;
-    line-height: 28px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    svg{
-      margin-right: 7px;
-      opacity: 0.54;
-    }
-  }
   .checkout-form{
     &__title{
       font-family: 'Montserrat', serif;
@@ -51,12 +39,6 @@
         padding: 10px 15px;
         max-width: 100%;
       }
-      .error-mess{
-        color: red;
-        font-size: 12px;
-        position: absolute;
-
-      }
     }
 
   }
@@ -68,7 +50,6 @@
     .basket-item{
       display: flex;
       align-items: center;
-      justify-content: space-between;
       background: #fff;
       padding: 0 0 20px;
       margin-bottom: 20px;
@@ -100,56 +81,12 @@
         }
       }
       .product-price-info{
-        text-align: right;
         .product-price{
           font-weight: 500;
           font-size: 24px;
           line-height: 20px;
           display: flex;
         }
-        .remove-item{
-          cursor: pointer;
-          color: rgba(36, 28, 21, 0.54);
-          margin-top: 15px;
-          font-weight: 500;
-          font-size: 16px;
-          line-height: 20px;
-          display: block;
-          text-decoration-line: underline
-        }
-      }
-    }
-  }
-  .basket-all{
-    padding: 0 0;
-    margin: 0 0 12px;
-    text-align: center;
-    background: #fff;
-    position: relative;
-    &:before{
-      content: '';
-      position: absolute;
-      background: rgba(36, 28, 21, 0.17);
-      right: 0;
-      left: 0;
-      top: -20px;
-      height: 1px;
-    }
-    .total{
-      font-family: 'Montserrat', sans-serif;
-      font-size: 20px;
-      line-height: 24px;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-      color: var(--black);
-      align-items: center;
-      &__price{
-        font-family: 'Montserrat', sans-serif;
-        font-size: 20px;
-        line-height: 24px;
-        font-weight: bold;
       }
     }
   }
