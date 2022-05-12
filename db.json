@@ -2,161 +2,144 @@
   "dataPizza": [
     {
       "type": "pizza",
-      "id": 1,
+      "id": "p1",
       "img": "/src/img/887590c4.jpeg",
       "title": "Frutti di mare",
       "description": "томат, моцарела, морепродукти, лимон, пармезан",
       "size": "30",
       "weight": "350",
-      "price": "200",
+      "price": 200,
       "category": "meat"
     },
     {
       "type": "pizza",
-      "id": 2,
+      "id": "p2",
       "img": "./src/img/887590c4.jpeg",
       "title": "Salmone",
       "description": "'томат, моцарела, морепродукти, лимон, sadsadasd asd as пармезан',",
       "size": "35",
       "weight": "450",
-      "price": "220",
+      "price": 220,
       "category": "fish"
     },
     {
       "type": "pizza",
-      "id": 3,
+      "id": "p3",
       "img": "./src/img/887590c4.jpeg",
       "title": "anasda",
       "description": "томат, моцарела, пармезан",
       "size": "35",
       "weight": "450",
-      "price": "220",
+      "price": 220,
       "category": "meat"
     },
     {
       "type": "pizza",
-      "id": 4,
+      "id": "p4",
       "img": "./src/img/887590c4.jpeg",
       "title": "ZCCcasdd",
       "description": "томат, моцарела, томат, моцарела, пармезан пармезан",
       "size": "32",
       "weight": "250",
-      "price": "190",
+      "price": 190,
       "category": "vegetarian"
     },
     {
       "type": "pizza",
-      "id": 5,
+      "id": "p5",
       "img": "./src/img/887590c4.jpeg",
       "title": "anasda",
       "description": "томат, моцарела, пармезан",
       "size": "35",
       "weight": "450",
-      "price": "220",
+      "price": 220,
       "category": "meat"
     },
     {
       "type": "pizza",
-      "id": 6,
+      "id": "P6",
       "img": "./src/img/887590c4.jpeg",
       "title": "ZCCcasdd",
       "description": "томат, моцарела, томат, моцарела, пармезан пармезан",
       "size": "32",
       "weight": "250",
-      "price": "190",
+      "price": 180,
       "category": "vegetarian"
     }
   ],
   "dataDrink": [
     {
       "type": "drink",
-      "id": 1,
+      "id": "d1",
       "img": "src/img/887590c4.jpeg",
       "title": "Cola",
       "size": "0,5л",
-      "price": "25",
+      "price": 25,
       "category": "Water"
     },
     {
       "type": "drink",
-      "id": 2,
+      "id": "d2",
       "img": "src/img/887590c4.jpeg",
       "title": "Фанта",
       "size": "1л",
-      "price": "40",
+      "price": 40,
       "category": "Water"
     },
     {
       "type": "drink",
-      "id": 3,
+      "id": "d3",
       "img": "src/img/887590c4.jpeg",
       "title": "Rich",
       "size": "1л",
-      "price": "45",
+      "price": 45,
       "category": "Juice"
     }
   ],
   "dataSalat": [
     {
       "type": "salat",
-      "id": 1,
+      "id": "s1",
       "img": "src/img/887590c4.jpeg",
       "title": "З бастурмою",
       "description": "салат Айсберг, бастурма, перець болгарський, помідори чері, фета, горіхи кеш'ю, соус",
-      "price": "120"
+      "price": 120
     },
     {
       "type": "salat",
-      "id": 2,
+      "id": "s2",
       "img": "src/img/887590c4.jpeg",
       "title": "Аллегро",
       "description": "салат Айсберг, бастурма, перець болгарський, помідори чері, фета, горіхи кеш'ю, соус",
-      "price": "110"
+      "price": 110
     },
     {
       "type": "salat",
-      "id": 3,
+      "id": "s3",
       "img": "src/img/887590c4.jpeg",
       "title": "З бастурмою",
       "description": "салат Айсберг, бастурма, перець болгарський, помідори чері, фета, горіхи кеш'ю, соус",
-      "price": "120"
+      "price": 120
     },
     {
       "type": "salat",
-      "id": 4,
+      "id": "s4",
       "img": "src/img/887590c4.jpeg",
       "title": "Аллегро",
       "description": "салат Айсберг, бастурма, перець болгарський, помідори чері, фета, горіхи кеш'ю, соус",
-      "price": "110"
+      "price": 110
     }
   ],
   "dataBasket": [
     {
-      "img": "src/img/887590c4.jpeg",
-      "title": "З бастурмою",
-      "description": "салат Айсберг, бастурма, перець болгарський, помідори чері, фета, горіхи кеш'ю, соус",
-      "price": "120",
-      "id": 1
-    },
-    {
       "type": "pizza",
-      "id": 2,
+      "id": "p2",
       "img": "./src/img/887590c4.jpeg",
       "title": "Salmone",
       "description": "'томат, моцарела, морепродукти, лимон, sadsadasd asd as пармезан',",
       "size": "35",
       "weight": "450",
-      "price": "220"
-    },
-    {
-      "type": "pizza",
-      "id": 4,
-      "img": "./src/img/887590c4.jpeg",
-      "title": "ZCCcasdd",
-      "description": "томат, моцарела, томат, моцарела, пармезан пармезан",
-      "size": "32",
-      "weight": "250",
-      "price": "190"
+      "price": 220
     }
   ]
 }
