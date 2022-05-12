@@ -140,16 +140,6 @@
       "size": "35",
       "weight": "450",
       "price": 220
-    },
-    {
-      "type": "pizza",
-      "id": "p3",
-      "img": "./src/img/887590c4.jpeg",
-      "title": "anasda",
-      "description": "томат, моцарела, пармезан",
-      "size": "35",
-      "weight": "450",
-      "price": 220
     }
   ]
 }

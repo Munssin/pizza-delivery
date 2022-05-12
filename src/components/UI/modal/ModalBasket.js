@@ -12,6 +12,7 @@ import {useEffect} from "react";
 import {fetchProductToBasket} from "../../../redux/actions/basketAction";
 
 const ModalBasket = ({isBasketOpen, closeBasket}) => {
+
     const basketDataItems = useSelector(state => state.basket.basketData);
 
     const getProducts = useActions(fetchProductToBasket)
@@ -19,7 +20,7 @@ const ModalBasket = ({isBasketOpen, closeBasket}) => {
     useEffect(() => {
         getProducts();
     }, [getProducts]);
-    // console.log(basketDataItems);
+
     const renderSmallCard = () => {
         return basketDataItems.map(item => {
             return <SmallCard
@@ -56,7 +57,7 @@ const ModalBasket = ({isBasketOpen, closeBasket}) => {
                     <span className="total__price">{sum} грн</span>
                 </div>
             </div>
-            <Link to="checkout">Перейти до замовлення</Link>
+            <Link onClick={closeBasket} to="checkout">Перейти до замовлення</Link>
         </div>
     </div>
     );

@@ -33,8 +33,6 @@ const Header = (props) => {
 
     const basketDataItems = useSelector(state => state.basket.basketData);
 
-    let productsInBasket = basketDataItems.length;
-
     return (
         <div>
             <header  className={headerNameClass}>
@@ -49,7 +47,7 @@ const Header = (props) => {
                     <ButtonComponet onClick={openModal} buttonName='Вхід'/>
                     <div onClick={openBasket} className="header-basket">
                         <img src={basket} alt=""/>
-                        <span className="header-basket__calck">{productsInBasket}</span>
+                        <span className="header-basket__calck">{basketDataItems.length}</span>
                         КОШИК
                     </div>
                 </div>
