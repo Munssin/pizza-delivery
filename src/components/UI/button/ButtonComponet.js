@@ -10,4 +10,5 @@ const ButtonComponet = ({onClick, buttonName, buttonType}) => {
     );
 }
 
+
 export default ButtonComponet;

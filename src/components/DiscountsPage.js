@@ -1,17 +1,12 @@
 import React, {useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-
-import {INCREASE_COUNT, REDUCE_COUNT} from "../redux/types";
+import {useSelector} from "react-redux";
 
 import DiscountCard from "./UI/DiscountCard";
-import PizzaIMG from "../img/887590c4.jpeg"
 import "../css/discount.scss";
 
 const DiscountPage = (props) => {
 
     const discountData = useSelector(state => state.discount.data);
-
-    const dispatch = useDispatch();
 
 
     const renderDiscountCard = () => {
