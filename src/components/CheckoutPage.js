@@ -4,46 +4,17 @@ import ButtonComponet from "./UI/button/ButtonComponet";
 
 import "../css/checkout.scss";
 import InputComponent from "./UI/input/inputComponent";
-import SmallCard from "./UI/modal/SmallCard";
-import {useSelector} from "react-redux";
-import {useActions} from "../helpers/hooks/useActions";
-import {fetchProductToBasket} from "../redux/actions/basketAction";
-import {useEffect} from "react";
+
 import {Link} from "react-router-dom";
 // import { useHistory } from "react-router-dom";
 import {useFormik} from "formik";
 import * as Yup from 'yup'
+import BasketForm from "./UI/modal/BasketForm";
+import {useSelector} from "react-redux";
 
 
 const CheckoutPage = (props) => {
-
     const basketDataItems = useSelector(state => state.basket.basketData);
-
-    const getProducts = useActions(fetchProductToBasket)
-
-    useEffect(() => {
-        getProducts();
-    }, [getProducts]);
-
-    const renderSmallCard = () => {
-        return basketDataItems.map(item => {
-            return <SmallCard
-                type={item.type}
-                key={item.id}
-                id={item.id}
-                img={item.img}
-                title={item.title}
-                description={item.description}
-                price={item.price}
-            />;
-        })
-    };
-
-    let initialCount = 0;
-    let sum = basketDataItems.reduce(
-        (accumulator, currentValue) => accumulator + currentValue.price,
-        initialCount
-    );
 
     // const history = useHistory()
     //
@@ -67,6 +38,12 @@ const CheckoutPage = (props) => {
             console.log(values)
         }
     });
+
+    let initialCount = 0;
+    let sum = basketDataItems.reduce(
+        (accumulator, currentValue) => accumulator + currentValue.price,
+        initialCount
+    );
     return (
         <div className="checkout">
             <div className="checkout-info">
@@ -121,20 +98,21 @@ const CheckoutPage = (props) => {
                         <label className="label">Коментар до замовлення</label>
                         <textarea className="input textarea"></textarea>
                     </div>
+                    {
+                        sum !== 0
+                            ? <ButtonComponet buttonType='submit' buttonName='Замовити'/>
+                            : <span>Корзина порожня, додайте вкусняху до корзини    <Link to="/" className="link-home">Обрати</Link> </span>
+                    }
 
-                    <ButtonComponet buttonType='submit' buttonName='Замовити'/>
                 </form>
             </div>
             <div className="checkout-basket">
-                <div className="basket-form">
-                    {renderSmallCard()}
-                </div>
-                <div className="basket-all">
-                    <div className="total">
-                        Всього до оплати:
-                        <span className="total__price">{sum} грн</span>
-                    </div>
-                </div>
+                <BasketForm />
+                {
+                    sum !== 0
+                        ? null
+                        : <p>Корзина порожня</p>
+                }
             </div>
         </div>
     );
