@@ -1,13 +1,14 @@
 import React from "react";
 import {Link} from "react-router-dom";
-
 import {useSelector} from "react-redux";
-
 import "./modal.scss";
 import BasketForm from "./BasketForm";
+import {closeBasketModalStatus} from "../../../redux/actions/basketAction";
+import {useActions} from "../../../helpers/hooks/useActions";
 
-const ModalBasket = ({isBasketOpen, closeBasket}) => {
-
+const ModalBasket = () => {
+    const isOpenBasketOpen = useSelector(state => state.basket.isModalBasketOpen);
+    const closeBasketModal = useActions(closeBasketModalStatus);
     const basketDataItems = useSelector(state => state.basket.basketData);
 
     let initialCount = 0;
@@ -16,17 +17,16 @@ const ModalBasket = ({isBasketOpen, closeBasket}) => {
         initialCount
     );
 
-
     return (
-    <div className={`modal-basket ${isBasketOpen ? 'basket-open':''}`}>
-        <div onClick={closeBasket} className="basket-overlay"></div>
+    <div className={`modal-basket ${isOpenBasketOpen ? 'basket-open':''}`}>
+        <div onClick={closeBasketModal} className="basket-overlay"></div>
         <div className="basket-container">
             <h5>Ваше замовлення:</h5>
 
             <BasketForm />
             {
                 sum !== 0
-                    ? <Link onClick={closeBasket} to="checkout">Перейти до замовлення</Link>
+                    ? <Link onClick={closeBasketModal} to="checkout">Перейти до замовлення</Link>
                     : <p>Корзина порожня</p>
             }
         </div>

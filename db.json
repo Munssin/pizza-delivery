@@ -132,24 +132,11 @@
   ],
   "dataBasket": [
     {
-      "type": "pizza",
-      "id": "P6",
-      "img": "./src/img/887590c4.jpeg",
-      "title": "ZCCcasdd",
-      "description": "томат, моцарела, томат, моцарела, пармезан пармезан",
-      "size": "32",
-      "weight": "250",
-      "price": 180
-    },
-    {
-      "type": "pizza",
-      "id": "p5",
-      "img": "./src/img/887590c4.jpeg",
-      "title": "anasda",
-      "description": "томат, моцарела, пармезан",
-      "size": "35",
-      "weight": "450",
-      "price": 220
+      "img": "src/img/887590c4.jpeg",
+      "title": "З бастурмою",
+      "description": "салат Айсберг, бастурма, перець болгарський, помідори чері, фета, горіхи кеш'ю, соус",
+      "price": 120,
+      "id": 1
     }
   ]
 }

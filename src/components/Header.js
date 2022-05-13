@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import Nav from "./Nav";
+import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
+import Nav from "./Nav";
 import ButtonComponet from './UI/button/ButtonComponet';
 import ModalComponent from './UI/modal/ModalComponent';
 import ModalBasket from './UI/modal/ModalBasket';
@@ -8,7 +9,8 @@ import useScrollHandler from "../helpers/hooks/useScrollHandler";
 import "../css/header.scss";
 import Logo from "../img/logo.png";
 import basket from "../img/bas.png";
-import {useSelector} from "react-redux";
+import {openBasketModalStatus} from "../redux/actions/basketAction";
+import {useActions} from "../helpers/hooks/useActions";
 
 const Header = () => {
     const headerNameClass = `header ${useScrollHandler()}`;
@@ -23,13 +25,9 @@ const Header = () => {
         setIsModalOpen(false);
     }
 
-    const [isBasketOpen, setIsBasketOpen] = useState(false);
-    const openBasket = () => {
-        setIsBasketOpen(true);
-    }
-    const closeBasket = () => {
-        setIsBasketOpen(false);
-    }
+    const isOpenBasketOpen = useSelector(state => state.basket.isModalBasketOpen);
+
+    const openBasketModal = useActions(openBasketModalStatus);
 
     return (
         <div>
@@ -43,7 +41,7 @@ const Header = () => {
                         Акції
                     </Link>
                     <ButtonComponet onClick={openModal} buttonName='Вхід'/>
-                    <div onClick={openBasket} className="header-basket">
+                    <div onClick={openBasketModal} className="header-basket">
                         <img src={basket} alt=""/>
                         <span className="header-basket__calck">{basketDataItems.length}</span>
                         КОШИК
@@ -55,10 +53,7 @@ const Header = () => {
                 isOpen={isModalOpen}
             />
 
-            <ModalBasket
-                closeBasket={closeBasket}
-                isBasketOpen={isBasketOpen}
-            />
+            <ModalBasket />
         </div>
 
     );

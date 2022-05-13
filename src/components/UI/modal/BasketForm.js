@@ -3,11 +3,8 @@ import {useSelector} from "react-redux";
 import {useActions} from "../../../helpers/hooks/useActions";
 import "./modal.scss";
 import SmallCard from "./SmallCard";
-
 import {useEffect} from "react";
-
 import {fetchProductToBasket} from "../../../redux/actions/basketAction";
-
 const BasketForm = () => {
 
     const basketDataItems = useSelector(state => state.basket.basketData);
