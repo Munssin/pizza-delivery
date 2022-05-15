@@ -1,10 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
+
+import Logo from "../images/logo.png";
 import "../css/footer.scss";
-import Logo from "../img/logo.png"
 
-const Footer = (props) => {
-
+const Footer = () => {
     return (
         <footer className="footer">
             <a href="" className="logo">
@@ -30,6 +30,6 @@ const Footer = (props) => {
             </ul>
         </footer>
     );
-}
+};
 
 export default Footer;

@@ -1,35 +1,25 @@
 import React, {useState} from "react";
-import Nav from "./Nav";
-import {Link} from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
 import ButtonComponet from './UI/button/ButtonComponet';
 import ModalComponent from './UI/modal/ModalComponent';
 import ModalBasket from './UI/modal/ModalBasket';
+import Nav from "./Nav";
+
 import useScrollHandler from "../helpers/hooks/useScrollHandler";
-import "../css/header.scss";
-import Logo from "../img/logo.png";
+
+import Logo from "../images/logo.png";
 import basket from "../img/bas.png";
-import {useSelector} from "react-redux";
+import "../css/header.scss";
 
 const Header = () => {
-    const headerNameClass = `header ${useScrollHandler()}`;
-    const basketDataItems = useSelector(state => state.basket.basketData);
-
+    const [isBasketOpen, setIsBasketOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const openModal = () => {
-        setIsModalOpen(true);
-    }
-    const closeModal = () => {
-        setIsModalOpen(false);
-    }
+    const basketDataItems = useSelector(state => state.basket.basketData);
 
-    const [isBasketOpen, setIsBasketOpen] = useState(false);
-    const openBasket = () => {
-        setIsBasketOpen(true);
-    }
-    const closeBasket = () => {
-        setIsBasketOpen(false);
-    }
+    const headerNameClass = `header ${useScrollHandler()}`;
 
     return (
         <div>
@@ -42,8 +32,8 @@ const Header = () => {
                     <Link to="/discount-page" className="header-link">
                         Акції
                     </Link>
-                    <ButtonComponet onClick={openModal} buttonName='Вхід'/>
-                    <div onClick={openBasket} className="header-basket">
+                    <ButtonComponet onClick={() => setIsModalOpen(true)} buttonName='Вхід'/>
+                    <div onClick={() => setIsBasketOpen(true)} className="header-basket">
                         <img src={basket} alt=""/>
                         <span className="header-basket__calck">{basketDataItems.length}</span>
                         КОШИК
@@ -51,17 +41,15 @@ const Header = () => {
                 </div>
             </header>
             <ModalComponent
-                closeModal={closeModal}
+                closeModal={() => setIsModalOpen(false)}
                 isOpen={isModalOpen}
             />
-
             <ModalBasket
-                closeBasket={closeBasket}
+                closeBasket={() => setIsBasketOpen(false)}
                 isBasketOpen={isBasketOpen}
             />
         </div>
-
     );
-}
+};
 
 export default Header;

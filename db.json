@@ -3,7 +3,7 @@
     {
       "type": "pizza",
       "id": "p1",
-      "img": "/src/img/887590c4.jpeg",
+      "img": "887590c4.jpeg",
       "title": "Frutti di mare",
       "description": "томат, моцарела, морепродукти, лимон, пармезан",
       "size": "30",
@@ -14,7 +14,7 @@
     {
       "type": "pizza",
       "id": "p2",
-      "img": "./src/img/887590c4.jpeg",
+      "img": "887590c4.jpeg",
       "title": "Salmone",
       "description": "'томат, моцарела, морепродукти, лимон, sadsadasd asd as пармезан',",
       "size": "35",
@@ -25,7 +25,7 @@
     {
       "type": "pizza",
       "id": "p3",
-      "img": "./src/img/887590c4.jpeg",
+      "img": "887590c4.jpeg",
       "title": "anasda",
       "description": "томат, моцарела, пармезан",
       "size": "35",
@@ -36,7 +36,7 @@
     {
       "type": "pizza",
       "id": "p4",
-      "img": "./src/img/887590c4.jpeg",
+      "img": "887590c4.jpeg",
       "title": "ZCCcasdd",
       "description": "томат, моцарела, томат, моцарела, пармезан пармезан",
       "size": "32",
@@ -47,7 +47,7 @@
     {
       "type": "pizza",
       "id": "p5",
-      "img": "./src/img/887590c4.jpeg",
+      "img": "887590c4.jpeg",
       "title": "anasda",
       "description": "томат, моцарела, пармезан",
       "size": "35",
@@ -58,7 +58,7 @@
     {
       "type": "pizza",
       "id": "P6",
-      "img": "./src/img/887590c4.jpeg",
+      "img": "887590c4.jpeg",
       "title": "ZCCcasdd",
       "description": "томат, моцарела, томат, моцарела, пармезан пармезан",
       "size": "32",
@@ -71,7 +71,7 @@
     {
       "type": "drink",
       "id": "d1",
-      "img": "src/img/887590c4.jpeg",
+      "img": "887590c4.jpeg",
       "title": "Cola",
       "size": "0,5л",
       "price": 25,
@@ -80,7 +80,7 @@
     {
       "type": "drink",
       "id": "d2",
-      "img": "src/img/887590c4.jpeg",
+      "img": "887590c4.jpeg",
       "title": "Фанта",
       "size": "1л",
       "price": 40,
@@ -89,7 +89,7 @@
     {
       "type": "drink",
       "id": "d3",
-      "img": "src/img/887590c4.jpeg",
+      "img": "887590c4.jpeg",
       "title": "Rich",
       "size": "1л",
       "price": 45,
@@ -100,7 +100,7 @@
     {
       "type": "salat",
       "id": "s1",
-      "img": "src/img/887590c4.jpeg",
+      "img": "887590c4.jpeg",
       "title": "З бастурмою",
       "description": "салат Айсберг, бастурма, перець болгарський, помідори чері, фета, горіхи кеш'ю, соус",
       "price": 120
@@ -108,7 +108,7 @@
     {
       "type": "salat",
       "id": "s2",
-      "img": "src/img/887590c4.jpeg",
+      "img": "887590c4.jpeg",
       "title": "Аллегро",
       "description": "салат Айсберг, бастурма, перець болгарський, помідори чері, фета, горіхи кеш'ю, соус",
       "price": 110
@@ -116,7 +116,7 @@
     {
       "type": "salat",
       "id": "s3",
-      "img": "src/img/887590c4.jpeg",
+      "img": "887590c4.jpeg",
       "title": "З бастурмою",
       "description": "салат Айсберг, бастурма, перець болгарський, помідори чері, фета, горіхи кеш'ю, соус",
       "price": 120
@@ -124,7 +124,7 @@
     {
       "type": "salat",
       "id": "s4",
-      "img": "src/img/887590c4.jpeg",
+      "img": "887590c4.jpeg",
       "title": "Аллегро",
       "description": "салат Айсберг, бастурма, перець болгарський, помідори чері, фета, горіхи кеш'ю, соус",
       "price": 110
@@ -134,7 +134,7 @@
     {
       "type": "pizza",
       "id": "p2",
-      "img": "./src/img/887590c4.jpeg",
+      "img": "887590c4.jpeg",
       "title": "Salmone",
       "description": "'томат, моцарела, морепродукти, лимон, sadsadasd asd as пармезан',",
       "size": "35",

@@ -1,19 +1,15 @@
 import React from "react";
 import ButtonComponet from "./button/ButtonComponet";
 import {Link} from "react-router-dom";
-import {useDispatch} from "react-redux";
+
 import {useActions} from "../../helpers/hooks/useActions";
 import {addProductToBasket} from "../../redux/actions/basketAction";
 
-const Card = (props) => {
+const Card = props => {
     const {type, id, img, title, description, size, weight, price} = props;
     const dynamicPath = type === 'pizza' ? `/detail-pizza/${id}` : '';
 
     const pushProductToBasket = useActions(addProductToBasket);
-
-    const addToBasket = () => {
-        pushProductToBasket(props);
-    }
 
     return (
         <div className="product-item">
@@ -21,7 +17,7 @@ const Card = (props) => {
                 onClick={(e) => type !== 'pizza' && e.preventDefault()}
                 to={dynamicPath}>
                 <div className="product-item__photo">
-                    <img src={img} alt=""/>
+                    <img src={require(`../../images/${img}`)} alt=""/>
                 </div>
                 <div className="product-item__info">
                     <h2 className="product-item__name">{title}</h2>
@@ -43,7 +39,7 @@ const Card = (props) => {
             <div className="product-item__buy">
                 <ButtonComponet
                     buttonName='Додати в корзину'
-                    onClick={ () => addToBasket(props) }
+                    onClick={ () => pushProductToBasket(props) }
                 />
             </div>
         </div>

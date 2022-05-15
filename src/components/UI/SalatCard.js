@@ -1,13 +1,14 @@
 import React from "react";
 import ButtonComponet from "./button/ButtonComponet";
 
-const SalatCard = (props) => {
+const SalatCard = props => {
     const {img, title, description, price} = props;
+
     return (
         <div className="product-item drink-item salat-item">
             <a href="">
                 <div className="product-item__photo">
-                    <img src={img} alt=""/>
+                    <img src={require(`../../images/${img}`)} alt="" />
                 </div>
                 <div className="product-item__info">
                     <h2 className="product-item__name">{title}</h2>
@@ -25,6 +26,6 @@ const SalatCard = (props) => {
             </div>
         </div>
     );
-}
+};
 
 export default SalatCard;
