@@ -1,10 +1,9 @@
 import React from "react";
 import {useState} from "react";
-import ButtonComponet from "../button/ButtonComponet";
-import InputComponent from "../input/inputComponent";
+import {ButtonComponent, InputComponent} from "../index";
 import "./modal.scss";
 
-const ModalComponent = ({isOpen, closeModal}) => {
+export const ModalComponent = ({isOpen, closeModal}) => {
     const [formLogin, setFormLogin] = useState('active');
     const [formRegister, setFormRegister] = useState('');
     const [formReset, setFormReset] = useState('');
@@ -62,7 +61,7 @@ const ModalComponent = ({isOpen, closeModal}) => {
                     <InputComponent inputType='password' inputName='pass'/>
                 </div>
 
-                <ButtonComponet buttonType='submit' buttonName='Вхід'/>
+                <ButtonComponent buttonType='submit' buttonName='Вхід'/>
 
                 <div className="form-login-bottom">
                     <span onClick={showReset}>Забули пароль</span>
@@ -99,7 +98,7 @@ const ModalComponent = ({isOpen, closeModal}) => {
                     <InputComponent inputType='password' inputName='pass'/>
                 </div>
 
-                <ButtonComponet buttonType='submit' buttonName='Зареєструватись'/>
+                <ButtonComponent buttonType='submit' buttonName='Зареєструватись'/>
 
             </form>
             <form action="" id="modal-reset" className={`modal-form ${formReset ? 'active':''}`}>
@@ -111,7 +110,7 @@ const ModalComponent = ({isOpen, closeModal}) => {
                     <InputComponent inputType='email' inputName='login'/>
                 </div>
 
-                <ButtonComponet buttonType='submit' buttonName='Відновити'/>
+                <ButtonComponent buttonType='submit' buttonName='Відновити'/>
 
             </form>
         </div>
@@ -119,4 +118,4 @@ const ModalComponent = ({isOpen, closeModal}) => {
     );
 }
 
-export default ModalComponent;
+// export default ModalComponent;

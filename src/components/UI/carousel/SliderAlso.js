@@ -7,9 +7,9 @@ import 'swiper/css/scrollbar';
 import './carousel.css';
 
 import {useDispatch, useSelector} from "react-redux";
-import DrinkCard from "../cards/DrinkCard";
+import {DrinkCard} from "../index";
 
-const SliderAlso = () => {
+export const SliderAlso = () => {
     const drinksData = useSelector(state => state.drink.data);
     useDispatch();
     const renderCard = () => {
@@ -37,4 +37,4 @@ const SliderAlso = () => {
     );
 };
 
-export default SliderAlso;
+// export default SliderAlso;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {useSelector} from "react-redux";
 import {useActions} from "../helpers/hooks/useActions";
 import FilterPizza from "./FilterPizza";
-import Card from "./UI/cards/Card";
+import {Card} from "./UI/index";
 import Swiper from "./UI/carousel/Swiper";
 import "../css/main.scss";
 import {fetchPizza} from "../redux/actions/pizzaActions";

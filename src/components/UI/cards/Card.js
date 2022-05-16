@@ -1,10 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {useActions} from "../../../helpers/hooks/useActions";
-import ButtonComponet from "../button/ButtonComponet";
+import {ButtonComponent} from "../index";
 import {addProductToBasket} from "../../../redux/actions/basketAction";
 
-const Card = (props) => {
+export const Card = (props) => {
     const {type, id, img, title, description, size, weight, price} = props;
     const dynamicPath = type === 'pizza' ? `/detail-pizza/${id}` : '';
 
@@ -40,7 +40,7 @@ const Card = (props) => {
                 </div>
             </Link>
             <div className="product-item__buy">
-                <ButtonComponet
+                <ButtonComponent
                     buttonName='Додати в корзину'
                     onClick={ () => addToBasket(props) }
                 />
@@ -49,4 +49,4 @@ const Card = (props) => {
     );
 }
 
-export default Card;
+// export default Card;

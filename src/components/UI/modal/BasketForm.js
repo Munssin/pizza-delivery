@@ -3,10 +3,10 @@ import {useSelector} from "react-redux";
 import {useEffect} from "react";
 import {useActions} from "../../../helpers/hooks/useActions";
 import {fetchProductToBasket} from "../../../redux/actions/basketAction";
-import SmallCard from "./SmallCard";
+import {SmallCard} from "../index";
 import "./modal.scss";
 
-const BasketForm = () => {
+export const BasketForm = () => {
     const basketDataItems = useSelector(state => state.basket.basketData);
 
     const getProducts = useActions(fetchProductToBasket)
@@ -52,4 +52,4 @@ const BasketForm = () => {
 );
 }
 
-export default BasketForm;
+// export default BasketForm;

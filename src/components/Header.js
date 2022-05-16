@@ -2,9 +2,7 @@ import React, {useState} from "react";
 import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import Nav from "./Nav";
-import ButtonComponet from './UI/button/ButtonComponet';
-import ModalComponent from './UI/modal/ModalComponent';
-import ModalBasket from './UI/modal/ModalBasket';
+import {ButtonComponent, ModalComponent, ModalBasket} from "./UI/index";
 import useScrollHandler from "../helpers/hooks/useScrollHandler";
 import "../css/header.scss";
 import Logo from "../img/logo.png";
@@ -40,7 +38,7 @@ const Header = () => {
                     <Link to="/discount-page" className="header-link">
                         Акції
                     </Link>
-                    <ButtonComponet onClick={openModal} buttonName='Вхід'/>
+                    <ButtonComponent onClick={openModal} buttonName='Вхід'/>
                     <div onClick={openBasketModal} className="header-basket">
                         <img src={basket} alt=""/>
                         <span className="header-basket__calck">{basketDataItems.length}</span>

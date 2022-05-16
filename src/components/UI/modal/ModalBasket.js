@@ -2,11 +2,11 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {useActions} from "../../../helpers/hooks/useActions";
-import BasketForm from "./BasketForm";
+import {BasketForm} from "../index";
 import {closeBasketModalStatus} from "../../../redux/actions/basketAction";
 import "./modal.scss";
 
-const ModalBasket = () => {
+export const ModalBasket = () => {
     const isOpenBasketOpen = useSelector(state => state.basket.isModalBasketOpen);
     const closeBasketModal = useActions(closeBasketModalStatus);
     const basketDataItems = useSelector(state => state.basket.basketData);
@@ -34,4 +34,4 @@ const ModalBasket = () => {
     );
 }
 
-export default ModalBasket;
+// export default ModalBasket;

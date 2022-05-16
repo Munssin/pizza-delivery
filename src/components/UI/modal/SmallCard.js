@@ -4,7 +4,7 @@ import {useActions} from "../../../helpers/hooks/useActions";
 import { deleteProductFromBasket} from "../../../redux/actions/basketAction";
 import "./modal.scss";
 
-const SmallCard = (props) => {
+export const SmallCard = (props) => {
     const {type, id, img, title, description, size, weight, price} = props;
     const dynamicPath = type === 'pizza' ? `/detail-pizza/${id}` : '';
 
@@ -38,4 +38,4 @@ const SmallCard = (props) => {
     );
 }
 
-export default SmallCard;
+// export default SmallCard;

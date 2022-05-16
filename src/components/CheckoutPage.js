@@ -3,9 +3,8 @@ import {Link, useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {useFormik} from "formik";
 import * as Yup from 'yup'
-import ButtonComponet from "./UI/button/ButtonComponet";
-import InputComponent from "./UI/input/inputComponent";
-import BasketForm from "./UI/modal/BasketForm";
+import {ButtonComponent, InputComponent, BasketForm} from "./UI/index";
+
 import "../css/checkout.scss";
 
 const CheckoutPage = () => {
@@ -93,10 +92,9 @@ const CheckoutPage = () => {
                     </div>
                     {
                         sum !== 0
-                            ? <ButtonComponet buttonType='submit' buttonName='Замовити'/>
+                            ? <ButtonComponent buttonType='submit' buttonName='Замовити'/>
                             : <span>Корзина порожня, додайте вкусняху до корзини    <Link to="/" className="link-home">Обрати</Link> </span>
                     }
-
                 </form>
             </div>
             <div className="checkout-basket">
