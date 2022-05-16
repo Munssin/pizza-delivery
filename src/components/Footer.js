@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import "../css/footer.scss";
 import Logo from "../img/logo.png"
 
-const Footer = (props) => {
+const Footer = () => {
 
     return (
         <footer className="footer">

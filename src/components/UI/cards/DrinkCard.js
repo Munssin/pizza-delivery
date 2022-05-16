@@ -1,10 +1,10 @@
 import React from "react";
-import ButtonComponet from "./button/ButtonComponet";
+import ButtonComponet from "../button/ButtonComponet";
 
-const SalatCard = (props) => {
-    const {img, title, description, price} = props;
+const DrinkCard = (props) => {
+    const {img, title, size, price} = props;
     return (
-        <div className="product-item drink-item salat-item">
+        <div className="product-item drink-item">
             <a href="">
                 <div className="product-item__photo">
                     <img src={img} alt=""/>
@@ -12,9 +12,8 @@ const SalatCard = (props) => {
                 <div className="product-item__info">
                     <h2 className="product-item__name">{title}</h2>
                     <div className="product-item__info-main">
-                        <span className="product-item__properties__text">Склад:{description} </span>
-
                         <div className="product-item__properties">
+                            <span className="product-item_properties__text">Об'єм:{size} </span>
                             <div className="product-item__price">{price} <span>грн</span></div>
                         </div>
                     </div>
@@ -27,4 +26,4 @@ const SalatCard = (props) => {
     );
 }
 
-export default SalatCard;
+export default DrinkCard;

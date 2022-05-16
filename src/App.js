@@ -6,11 +6,11 @@ import Footer from "./components/Footer";
 import PizzaPage from "./components/PizzaPage";
 import DrinkPage from "./components/DrinkPage";
 import SalatPage from "./components/SalatPage";
-import "./css/reset.scss";
-import "./css/main.scss";
 import DiscountPage from "./components/DiscountsPage";
 import DetailPizza from "./components/DetailPizza";
 import CheckoutPage from "./components/CheckoutPage";
+import "./css/reset.scss";
+import "./css/main.scss";
 
 const App = () => {
 

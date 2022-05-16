@@ -1,10 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
-import "./modal.scss";
+import {useActions} from "../../../helpers/hooks/useActions";
 import BasketForm from "./BasketForm";
 import {closeBasketModalStatus} from "../../../redux/actions/basketAction";
-import {useActions} from "../../../helpers/hooks/useActions";
+import "./modal.scss";
 
 const ModalBasket = () => {
     const isOpenBasketOpen = useSelector(state => state.basket.isModalBasketOpen);
@@ -35,4 +35,3 @@ const ModalBasket = () => {
 }
 
 export default ModalBasket;
-

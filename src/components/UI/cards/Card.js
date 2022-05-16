@@ -1,9 +1,8 @@
 import React from "react";
-import ButtonComponet from "./button/ButtonComponet";
 import {Link} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {useActions} from "../../helpers/hooks/useActions";
-import {addProductToBasket} from "../../redux/actions/basketAction";
+import {useActions} from "../../../helpers/hooks/useActions";
+import ButtonComponet from "../button/ButtonComponet";
+import {addProductToBasket} from "../../../redux/actions/basketAction";
 
 const Card = (props) => {
     const {type, id, img, title, description, size, weight, price} = props;

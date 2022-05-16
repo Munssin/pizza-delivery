@@ -1,10 +1,10 @@
 import React from "react";
-import "./modal.scss";
+import {useState} from "react";
 import ButtonComponet from "../button/ButtonComponet";
 import InputComponent from "../input/inputComponent";
-import {useState} from "react";
+import "./modal.scss";
 
-const ModalComponet = ({isOpen, closeModal}) => {
+const ModalComponent = ({isOpen, closeModal}) => {
     const [formLogin, setFormLogin] = useState('active');
     const [formRegister, setFormRegister] = useState('');
     const [formReset, setFormReset] = useState('');
@@ -119,4 +119,4 @@ const ModalComponet = ({isOpen, closeModal}) => {
     );
 }
 
-export default ModalComponet;
+export default ModalComponent;

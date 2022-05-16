@@ -1,14 +1,9 @@
 import React from "react";
 import {useParams} from "react-router-dom";
-
 import {useDispatch, useSelector} from "react-redux";
-
-import "../css/product-detail.scss";
-
 import ButtonComponet from "./UI/button/ButtonComponet";
-
 import SliderAlso from "./UI/carousel/SliderAlso";
-
+import "../css/product-detail.scss";
 
 const DetailPizza = (props) => {
     const match = useParams();
