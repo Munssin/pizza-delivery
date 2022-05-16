@@ -1,16 +1,14 @@
 import React, {useState} from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-
-import ButtonComponet from './UI/button/ButtonComponet';
-import ModalComponent from './UI/modal/ModalComponent';
-import ModalBasket from './UI/modal/ModalBasket';
+import {useSelector} from "react-redux";
+import {Link} from "react-router-dom";
 import Nav from "./Nav";
-
+import {ButtonComponent, ModalComponent, ModalBasket} from "./UI/index";
 import useScrollHandler from "../helpers/hooks/useScrollHandler";
 
 import Logo from "../images/logo.png";
 import basket from "../img/bas.png";
+import {openBasketModalStatus} from "../redux/actions/basketAction";
+import {useActions} from "../helpers/hooks/useActions";
 import "../css/header.scss";
 
 const Header = () => {
@@ -32,7 +30,7 @@ const Header = () => {
                     <Link to="/discount-page" className="header-link">
                         Акції
                     </Link>
-                    <ButtonComponet onClick={() => setIsModalOpen(true)} buttonName='Вхід'/>
+                    <ButtonComponent onClick={() => setIsModalOpen(true)} buttonName='Вхід'/>
                     <div onClick={() => setIsBasketOpen(true)} className="header-basket">
                         <img src={basket} alt=""/>
                         <span className="header-basket__calck">{basketDataItems.length}</span>

@@ -10,9 +10,7 @@ import Banner from "../../../img/truffaldino_banner_3.mp4"
 
 export default () => {
     return (
-        <Swiper
-            className="mySwiper"
-        >
+        <Swiper className="mySwiper">
             <SwiperSlide>
                 (
                 <video loop muted autoPlay>

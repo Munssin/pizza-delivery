@@ -1,9 +1,6 @@
 import React, {Component} from "react";
-
 import { connect } from "react-redux";
-
-import Card from "./UI/Card";
-
+import {Card} from "./UI/index";
 import {fetchSalat} from "../redux/actions/salatActions";
 
 class SalatPage extends Component{

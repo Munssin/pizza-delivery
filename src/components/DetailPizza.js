@@ -1,14 +1,8 @@
 import React from "react";
 import {useParams} from "react-router-dom";
-
 import {useDispatch, useSelector} from "react-redux";
-
+import {ButtonComponent, SliderAlso} from "./UI/index";
 import "../css/product-detail.scss";
-
-import ButtonComponet from "./UI/button/ButtonComponet";
-
-import SliderAlso from "./UI/carousel/SliderAlso";
-
 
 const DetailPizza = (props) => {
     const match = useParams();
@@ -35,7 +29,7 @@ const DetailPizza = (props) => {
                         <span className="pizza-detail-properties__text">Вага:{selectedPizza.weight}г; </span>
                     </div>
                     <div className="pizza-detail-properties-price">Ціна: <span>{selectedPizza.price } грн</span></div>
-                    <ButtonComponet buttonType='button' buttonName='Замовити'/>
+                    <ButtonComponent buttonType='button' buttonName='Замовити'/>
                 </div>
             </div>
 

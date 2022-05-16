@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import "swiper/css/navigation";
@@ -7,12 +7,11 @@ import 'swiper/css/scrollbar';
 import './carousel.css';
 
 import {useDispatch, useSelector} from "react-redux";
-import DrinkCard from "../DrinkCard";
+import {DrinkCard} from "../index";
 
-const SliderAlso = (props) => {
+export const SliderAlso = () => {
     const drinksData = useSelector(state => state.drink.data);
-    const dispatch = useDispatch();
-
+    useDispatch();
     const renderCard = () => {
         return drinksData.map(item => {
             return <SwiperSlide key={item.id}> <DrinkCard
@@ -38,4 +37,4 @@ const SliderAlso = (props) => {
     );
 };
 
-export default SliderAlso;
+// export default SliderAlso;

@@ -4,7 +4,11 @@ import {
     FETCH_PRODUCT_ITEMS,
     FETCH_PRODUCT_ITEMS_SUCCESS,
     DELETE_PRODUCT_ITEMS,
-    DELETE_PRODUCT_ITEMS_SUCCESS
+    DELETE_PRODUCT_ITEMS_SUCCESS,
+    OPEN_BASKET_MODAL_STATUS,
+    OPEN_BASKET_MODAL_STATUS_SUCCESS,
+    CLOSE_BASKET_MODAL_STATUS,
+    CLOSE_BASKET_MODAL_STATUS_SUCCESS
 } from "../types";
 import {all, call, fork, put, takeEvery} from "redux-saga/effects";
 import {ApiService} from "../../helpers/api-service";
@@ -12,17 +16,23 @@ import {ApiService} from "../../helpers/api-service";
 export const addProductToBasket = (product) => ({
      type: ADD_PRODUCT_TO_BASKET,
      payload: {product}
-})
-
+});
 
 export const fetchProductToBasket = () => ({
      type: FETCH_PRODUCT_ITEMS,
-})
+});
 
 export const deleteProductFromBasket = (product) => ({
     type: DELETE_PRODUCT_ITEMS,
     payload: {product}
 })
+
+export const openBasketModalStatus = () => ({
+    type: OPEN_BASKET_MODAL_STATUS
+});
+export const closeBasketModalStatus = () => ({
+    type: CLOSE_BASKET_MODAL_STATUS
+});
 
 
 function* addProductToBasketWorker(dataProduct){
@@ -72,11 +82,32 @@ function* deleteProductFromBasketWatcher(){
     yield takeEvery(DELETE_PRODUCT_ITEMS, deleteProductFromBasketWorker)
 }
 
+function* openBasketModalStatusWorker(){
+    yield put({
+        type: OPEN_BASKET_MODAL_STATUS_SUCCESS,
+    });
+}
+
+function* openBasketModalStatusWatcher(){
+    yield takeEvery(OPEN_BASKET_MODAL_STATUS, openBasketModalStatusWorker);
+}
+
+function* closeBasketModalStatusWorker(){
+    yield put({
+        type: CLOSE_BASKET_MODAL_STATUS_SUCCESS,
+    });
+}
+
+function* closeBasketModalStatusWatcher(){
+    yield takeEvery(CLOSE_BASKET_MODAL_STATUS, closeBasketModalStatusWorker);
+}
+
 export function* basketWatcher(){
     yield all([
         fork(addProductToBasketWatcher),
         fork(fetchBasketWatcher),
         fork(deleteProductFromBasketWatcher),
+        fork(openBasketModalStatusWatcher),
+        fork(closeBasketModalStatusWatcher),
     ])
 }
-

@@ -12,4 +12,3 @@ export const rootReducer = combineReducers({
     discount: discountReducer,
     basket: basketReducer,
 })
-

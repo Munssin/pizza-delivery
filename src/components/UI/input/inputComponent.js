@@ -1,7 +1,7 @@
 import React from "react";
 import "./input.scss";
 
-const InputComponet = ({inputType, inputName, value, onChange}) => {
+export const InputComponent = ({inputType, inputName, value, onChange}) => {
     return (
             <input className="input"
                    name={inputName}
@@ -12,4 +12,4 @@ const InputComponet = ({inputType, inputName, value, onChange}) => {
     );
 }
 
-export default InputComponet;
+// export default InputComponet;

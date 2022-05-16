@@ -1,6 +1,6 @@
 import React from "react";
 import {useSelector} from "react-redux";
-import DiscountCard from "./UI/DiscountCard";
+import {DiscountCard} from "./UI/index";
 import "../css/discount.scss";
 
 const DiscountPage = () => {
