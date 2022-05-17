@@ -49,7 +49,5 @@ export const BasketForm = () => {
             </div>
         </div>
 
-);
+    );
 }
-
-// export default BasketForm;

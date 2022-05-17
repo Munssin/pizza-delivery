@@ -8,7 +8,7 @@ export const DrinkCard = (props) => {
         <div className="product-item drink-item">
             <a href="">
                 <div className="product-item__photo">
-                    <img src={require(`../../images/${img}`)} alt="" />
+                    <img src={require(`../../../images/${img}`)} alt="" />
                 </div>
                 <div className="product-item__info">
                     <h2 className="product-item__name">{title}</h2>

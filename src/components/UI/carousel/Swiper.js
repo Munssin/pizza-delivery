@@ -5,7 +5,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import './carousel.css';
-import Banner from "../../../img/truffaldino_banner_3.mp4"
+import Banner from "../../../images/truffaldino_banner_3.mp4"
 
 
 export default () => {

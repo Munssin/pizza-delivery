@@ -37,5 +37,3 @@ export const SmallCard = (props) => {
         </div>
     );
 }
-
-// export default SmallCard;

@@ -4,20 +4,28 @@ import {Link} from "react-router-dom";
 import Nav from "./Nav";
 import {ButtonComponent, ModalComponent, ModalBasket} from "./UI/index";
 import useScrollHandler from "../helpers/hooks/useScrollHandler";
-
+import "../css/header.scss";
 import Logo from "../images/logo.png";
-import basket from "../img/bas.png";
+import basket from "../images/bas.png";
 import {openBasketModalStatus} from "../redux/actions/basketAction";
 import {useActions} from "../helpers/hooks/useActions";
-import "../css/header.scss";
 
 const Header = () => {
-    const [isBasketOpen, setIsBasketOpen] = useState(false);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
+    const headerNameClass = `header ${useScrollHandler()}`;
     const basketDataItems = useSelector(state => state.basket.basketData);
 
-    const headerNameClass = `header ${useScrollHandler()}`;
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    }
+    const closeModal = () => {
+        setIsModalOpen(false);
+    }
+
+    const isOpenBasketOpen = useSelector(state => state.basket.isModalBasketOpen);
+
+    const openBasketModal = useActions(openBasketModalStatus);
 
     return (
         <div>
@@ -30,8 +38,8 @@ const Header = () => {
                     <Link to="/discount-page" className="header-link">
                         Акції
                     </Link>
-                    <ButtonComponent onClick={() => setIsModalOpen(true)} buttonName='Вхід'/>
-                    <div onClick={() => setIsBasketOpen(true)} className="header-basket">
+                    <ButtonComponent onClick={openModal} buttonName='Вхід'/>
+                    <div onClick={openBasketModal} className="header-basket">
                         <img src={basket} alt=""/>
                         <span className="header-basket__calck">{basketDataItems.length}</span>
                         КОШИК
@@ -39,15 +47,14 @@ const Header = () => {
                 </div>
             </header>
             <ModalComponent
-                closeModal={() => setIsModalOpen(false)}
+                closeModal={closeModal}
                 isOpen={isModalOpen}
             />
-            <ModalBasket
-                closeBasket={() => setIsBasketOpen(false)}
-                isBasketOpen={isBasketOpen}
-            />
+
+            <ModalBasket />
         </div>
+
     );
-};
+}
 
 export default Header;

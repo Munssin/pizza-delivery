@@ -16,7 +16,7 @@ export const Card = (props) => {
                 onClick={(e) => type !== 'pizza' && e.preventDefault()}
                 to={dynamicPath}>
                 <div className="product-item__photo">
-                    <img src={require(`../../images/${img}`)} alt=""/>
+                    <img src={require(`../../../images/${img}`)} alt=""/>
                 </div>
                 <div className="product-item__info">
                     <h2 className="product-item__name">{title}</h2>

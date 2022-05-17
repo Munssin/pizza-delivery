@@ -36,5 +36,3 @@ export const SliderAlso = () => {
         </Swiper>
     );
 };
-
-// export default SliderAlso;

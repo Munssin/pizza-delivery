@@ -12,5 +12,3 @@ export const DiscountCard = (props) => {
         </div>
     );
 }
-
-// export default DiscountCard;
