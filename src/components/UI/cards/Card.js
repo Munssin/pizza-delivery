@@ -9,6 +9,7 @@ export const Card = (props) => {
     const dynamicPath = type === 'pizza' ? `/detail-pizza/${id}` : '';
 
     const pushProductToBasket = useActions(addProductToBasket);
+
     return (
         <div className="product-item">
             <Link
@@ -48,8 +49,7 @@ export const Card = (props) => {
             <div className="product-item__buy">
                 <ButtonComponent
                     buttonName='Додати в корзину'
-                    // onClick={ () => pushProductToBasket(props) }
-                    onClick={ () => console.log(props) }
+                    onClick={ () => pushProductToBasket(props) }
                 />
             </div>
         </div>

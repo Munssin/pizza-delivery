@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import {useActions} from "../helpers/hooks/useActions";
 import FilterPizza from "./FilterPizza";
 import {Card} from "./UI/index";
-import Swiper from "./UI/carousel/Swiper";
+import HomeSlider from "./UI/carousel/HomeSlider";
 import "../css/main.scss";
 import {fetchPizza} from "../redux/actions/pizzaActions";
 
@@ -45,7 +45,7 @@ const PizzaPage = () => {
 
     return (
         <div className="pizza-main">
-            <Swiper />
+            <HomeSlider />
             <div className="main-banner">
                 <h1>Pizza Title</h1>
             </div>

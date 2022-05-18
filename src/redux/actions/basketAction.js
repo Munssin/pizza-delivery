@@ -53,7 +53,6 @@ function* addProductToBasketWatcher(){
 
 function* fetchBasketWorker(){
     const basketData = yield call(ApiService.load, "dataBasket");
-    // console.log(basketData);
 
     yield put({
         type: FETCH_PRODUCT_ITEMS_SUCCESS,
