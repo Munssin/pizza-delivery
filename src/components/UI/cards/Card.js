@@ -48,8 +48,7 @@ export const Card = (props) => {
             <div className="product-item__buy">
                 <ButtonComponent
                     buttonName='Додати в корзину'
-                    // onClick={ () => pushProductToBasket(props) }
-                    onClick={ () => console.log(props) }
+                    onClick={ () => pushProductToBasket(props) }
                 />
             </div>
         </div>

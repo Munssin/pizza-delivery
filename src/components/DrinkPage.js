@@ -28,6 +28,7 @@ const DrinkPage = () => {
         return filteredDrinkData.map(item => {
             return <Card
                 type={item.type}
+                id={item.id}
                 key={item.id}
                 img={item.img}
                 title={item.title}

@@ -13,10 +13,12 @@ export const SliderAlso = ({drinksData}) => {
         return drinksData.map(item => {
             return <SwiperSlide key={item.id}> <Card
                 type={item.type}
+                id={item.id}
                 key={item.id}
                 img={item.img}
                 title={item.title}
                 size={item.size}
+                volume={item.volume}
                 price={item.price}
             /> </SwiperSlide>;
         })

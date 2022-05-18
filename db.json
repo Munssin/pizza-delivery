@@ -130,5 +130,33 @@
       "price": 110
     }
   ],
-  "dataBasket": []
+  "dataBasket": [
+    {
+      "type": "drink",
+      "id": "d2",
+      "img": "887590c4.jpeg",
+      "title": "Фанта",
+      "volume": "1л",
+      "price": 40
+    },
+    {
+      "type": "drink",
+      "id": "d3",
+      "img": "887590c4.jpeg",
+      "title": "Rich",
+      "volume": "1л",
+      "price": 45
+    },
+    {
+      "type": "pizza",
+      "id": "p2",
+      "img": "887590c4.jpeg",
+      "title": "Salmone",
+      "description": "'томат, моцарела, морепродукти, лимон, sadsadasd asd as пармезан',",
+      "size": "35",
+      "weight": "450",
+      "price": 220,
+      "category": "fish"
+    }
+  ]
 }

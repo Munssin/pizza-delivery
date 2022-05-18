@@ -25,7 +25,6 @@ const DetailPizza = () => {
     useEffect(() => {
         if (drinksData.length === 0) {
             getDrink();
-            console.log("fetch drink");
         }
     }, [getDrink, drinksData])
 

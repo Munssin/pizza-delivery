@@ -21,6 +21,7 @@ class SalatPage extends Component{
             return <Card
                 key={item.id}
                 img={item.img}
+                id={item.id}
                 title={item.title}
                 description={item.description}
                 size={item.size}
