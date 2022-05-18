@@ -6,15 +6,13 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import './carousel.css';
 
-import {useDispatch, useSelector} from "react-redux";
-import {DrinkCard} from "../index";
+import {Card} from "../index";
 
-export const SliderAlso = () => {
-    const drinksData = useSelector(state => state.drink.data);
-    useDispatch();
+export const SliderAlso = ({drinksData}) => {
     const renderCard = () => {
         return drinksData.map(item => {
-            return <SwiperSlide key={item.id}> <DrinkCard
+            return <SwiperSlide key={item.id}> <Card
+                type={item.type}
                 key={item.id}
                 img={item.img}
                 title={item.title}

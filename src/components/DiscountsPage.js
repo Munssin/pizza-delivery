@@ -24,6 +24,6 @@ const DiscountPage = () => {
             </div>
         </div>
     );
-}
+};
 
 export default DiscountPage;

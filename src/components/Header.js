@@ -23,8 +23,6 @@ const Header = () => {
         setIsModalOpen(false);
     }
 
-    const isOpenBasketOpen = useSelector(state => state.basket.isModalBasketOpen);
-
     const openBasketModal = useActions(openBasketModalStatus);
 
     return (
@@ -55,6 +53,6 @@ const Header = () => {
         </div>
 
     );
-}
+};
 
 export default Header;

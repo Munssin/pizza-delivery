@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {useActions} from "../../../helpers/hooks/useActions";
-import { deleteProductFromBasket} from "../../../redux/actions/basketAction";
+import {closeBasketModalStatus, deleteProductFromBasket} from "../../../redux/actions/basketAction";
 import "./modal.scss";
 
 export const SmallCard = (props) => {
@@ -14,10 +14,16 @@ export const SmallCard = (props) => {
         removeProductFromBasket(props);
     }
 
+    // const closeFuncBasketModalStatus = useActions(closeBasketModalStatus);
+
+
     return (
         <div className="basket-item">
-            <Link to="/">
-                <img src={img} alt="Img"/>
+            <Link
+                onClick={(e) => type !== 'pizza' && e.preventDefault()}
+                  to={dynamicPath}
+            >
+                {/*<img src={require(`../../../images/${img}`)} alt="Img"/>*/}
             </Link>
             <div className="product-info">
                 <div className="product-info__name">{title}</div>
@@ -36,4 +42,4 @@ export const SmallCard = (props) => {
             </div>
         </div>
     );
-}
+};

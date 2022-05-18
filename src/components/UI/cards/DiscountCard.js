@@ -11,4 +11,4 @@ export const DiscountCard = (props) => {
 
         </div>
     );
-}
+};

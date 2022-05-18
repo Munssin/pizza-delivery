@@ -2,7 +2,7 @@ import React from "react";
 import {Link, useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {useFormik} from "formik";
-import * as Yup from 'yup'
+import * as Yup from 'yup';
 import {ButtonComponent, InputComponent, BasketForm} from "./UI/index";
 
 import "../css/checkout.scss";
@@ -107,6 +107,6 @@ const CheckoutPage = () => {
             </div>
         </div>
     );
-}
+};
 
 export default CheckoutPage;

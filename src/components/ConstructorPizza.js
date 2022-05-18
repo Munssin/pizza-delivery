@@ -1,11 +1,11 @@
 import React from "react";
 
-const ConstructorPizza = (props) => {
+const ConstructorPizza = () => {
     return (
         <div>
             Constructor Pizza
         </div>
     );
-}
+};
 
 export default ConstructorPizza;

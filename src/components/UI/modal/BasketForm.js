@@ -29,7 +29,6 @@ export const BasketForm = () => {
         })
     };
 
-
     let initialCount = 0;
     let sum = basketDataItems.reduce(
         (accumulator, currentValue) => accumulator + currentValue.price,
@@ -50,4 +49,4 @@ export const BasketForm = () => {
         </div>
 
     );
-}
+};

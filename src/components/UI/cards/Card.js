@@ -5,11 +5,10 @@ import {ButtonComponent} from "../index";
 import {addProductToBasket} from "../../../redux/actions/basketAction";
 
 export const Card = (props) => {
-    const {type, id, img, title, description, size, weight, price} = props;
+    const {type, id, img, title, description, size, weight, price, volume} = props;
     const dynamicPath = type === 'pizza' ? `/detail-pizza/${id}` : '';
 
     const pushProductToBasket = useActions(addProductToBasket);
-
     return (
         <div className="product-item">
             <Link
@@ -22,27 +21,37 @@ export const Card = (props) => {
                     <h2 className="product-item__name">{title}</h2>
                     <p className="product-item__text">
                         {description} </p>
-                    <div className="product-item__info-main">
-                        {
-                            size && weight && (
+                    {
+                        type === "drink" ? (
+                            <div className="product-item__info-main">
                                 <div className="product-item__properties">
-                                    <span className="product-item_properties__text">Розмір:{size}см; </span>
-                                    <span className="product-item__properties__text">Вага:{weight}г; </span>
+                                    <span className="product-item_properties__text">Об'єм:{volume} </span>
+                                    <div className="product-item__price">{price} <span>грн</span></div>
                                 </div>
-                            )
-                        }
-                        <div className="product-item__price">{price} <span>грн</span></div>
-                    </div>
+                            </div>
+                        ) : (
+                            <div className="product-item__info-main">
+                                {
+                                    size && weight && (
+                                        <div className="product-item__properties">
+                                            <span className="product-item_properties__text">Розмір:{size}см; </span>
+                                            <span className="product-item__properties__text">Вага:{weight}г; </span>
+                                        </div>
+                                    )
+                                }
+                                <div className="product-item__price">{price} <span>грн</span></div>
+                            </div>
+                        )
+                    }
                 </div>
             </Link>
             <div className="product-item__buy">
                 <ButtonComponent
                     buttonName='Додати в корзину'
-                    onClick={ () => pushProductToBasket(props) }
+                    // onClick={ () => pushProductToBasket(props) }
+                    onClick={ () => console.log(props) }
                 />
             </div>
         </div>
     );
-}
-
-// export default Card;
+};

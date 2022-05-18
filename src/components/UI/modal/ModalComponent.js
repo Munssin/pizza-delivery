@@ -116,4 +116,4 @@ export const ModalComponent = ({isOpen, closeModal}) => {
         </div>
 
     );
-}
+};

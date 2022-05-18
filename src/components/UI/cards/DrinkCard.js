@@ -26,5 +26,3 @@ export const DrinkCard = (props) => {
         </div>
     );
 };
-
-// export default DrinkCard;

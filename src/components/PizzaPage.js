@@ -7,7 +7,6 @@ import Swiper from "./UI/carousel/Swiper";
 import "../css/main.scss";
 import {fetchPizza} from "../redux/actions/pizzaActions";
 
-
 const PizzaPage = () => {
     const pizzasData = useSelector(state => state.pizza.data);
 

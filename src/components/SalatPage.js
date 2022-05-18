@@ -46,16 +46,16 @@ class SalatPage extends Component{
         </div>
      )
     }
-}
+};
 
 const mapDispatchToProps = {
     fetchSalat
-}
+};
 
 const mapStateToProps = (state) => {
     return {
         salats: state.salat.data
     }
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SalatPage);
