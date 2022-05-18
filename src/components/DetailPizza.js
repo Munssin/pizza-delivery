@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {useParams} from "react-router-dom";
 import {useSelector} from "react-redux";
-import {ButtonComponent, SliderAlso} from "./UI/index";
+import {ButtonComponent, DrinksSlider} from "./UI/index";
 import "../css/product-detail.scss";
 import {useActions} from "../helpers/hooks/useActions";
 import {fetchPizza} from "../redux/actions/pizzaActions";
@@ -28,7 +28,7 @@ const DetailPizza = () => {
         }
     }, [getDrink, drinksData])
 
-    const selectedPizza = pizzasData.find( item => item.id == match.id );
+    const selectedPizza = pizzasData.find( item => item.id === match.id );
     const pushProductToBasket = useActions(addProductToBasket);
 
     return selectedPizza ? (
@@ -57,7 +57,7 @@ const DetailPizza = () => {
 
             <div className="product-also">
                 <h2 className="product-also__title">Не забудьте про напої</h2>
-                <SliderAlso drinksData={drinksData} />
+                <DrinksSlider drinksData={drinksData} />
             </div>
 
         </div>

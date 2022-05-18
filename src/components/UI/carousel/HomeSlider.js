@@ -8,7 +8,7 @@ import './carousel.css';
 import Banner from "../../../images/truffaldino_banner_3.mp4"
 
 
-export default () => {
+const HomeSlider = () => {
     return (
         <Swiper className="mySwiper">
             <SwiperSlide>
@@ -28,3 +28,5 @@ export default () => {
         </Swiper>
     );
 };
+
+export default HomeSlider;

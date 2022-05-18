@@ -9,6 +9,7 @@ export const Card = (props) => {
     const dynamicPath = type === 'pizza' ? `/detail-pizza/${id}` : '';
 
     const pushProductToBasket = useActions(addProductToBasket);
+
     return (
         <div className="product-item">
             <Link

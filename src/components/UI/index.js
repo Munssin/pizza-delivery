@@ -3,7 +3,7 @@ export {Card} from "./cards/Card";
 export {DiscountCard} from "./cards/DiscountCard";
 export {DrinkCard} from "./cards/DrinkCard";
 
-export {SliderAlso} from "./carousel/SliderAlso";
+export {DrinksSlider} from "./carousel/DrinksSlider";
 
 export {InputComponent} from "./input/inputComponent";
 
