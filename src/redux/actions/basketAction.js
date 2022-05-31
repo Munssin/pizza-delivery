@@ -8,7 +8,8 @@ import {
     OPEN_BASKET_MODAL_STATUS,
     OPEN_BASKET_MODAL_STATUS_SUCCESS,
     CLOSE_BASKET_MODAL_STATUS,
-    CLOSE_BASKET_MODAL_STATUS_SUCCESS
+    CLOSE_BASKET_MODAL_STATUS_SUCCESS,
+    ADD_SUCCESS
 } from "../types";
 import {all, call, fork, put, takeEvery} from "redux-saga/effects";
 import {ApiService} from "../../helpers/api-service";
@@ -16,6 +17,10 @@ import {ApiService} from "../../helpers/api-service";
 export const addProductToBasket = (product) => ({
      type: ADD_PRODUCT_TO_BASKET,
      payload: {product}
+});
+
+export const successAddProduct = () => ({
+    type: ADD_PRODUCT_TO_BASKET,
 });
 
 export const fetchProductToBasket = () => ({
@@ -41,7 +46,7 @@ function* addProductToBasketWorker(dataProduct){
         yield put({
             type: ADD_PRODUCT_TO_BASKET_SUCCESS,
             payload: {product: data},
-        })
+        });
     } catch (error){
         console.log(error);
     }
@@ -49,6 +54,22 @@ function* addProductToBasketWorker(dataProduct){
 
 function* addProductToBasketWatcher(){
     yield takeEvery(ADD_PRODUCT_TO_BASKET, addProductToBasketWorker)
+}
+
+function* successAddWorker(){
+    try {
+        // const succesMess = document.getElementsByClassName('success-mess');
+        // succesMess.classList.add("my-class");
+        yield put({
+            type: ADD_SUCCESS,
+        });
+    } catch (error){
+        console.log(error);
+    }
+}
+
+function* successAddWorkerWatcher(){
+    yield takeEvery(ADD_SUCCESS, successAddWorker)
 }
 
 function* fetchBasketWorker(){
@@ -108,5 +129,6 @@ export function* basketWatcher(){
         fork(deleteProductFromBasketWatcher),
         fork(openBasketModalStatusWatcher),
         fork(closeBasketModalStatusWatcher),
+        fork(successAddWorkerWatcher)
     ])
 }

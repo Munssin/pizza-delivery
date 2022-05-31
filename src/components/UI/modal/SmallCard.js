@@ -5,25 +5,28 @@ import {closeBasketModalStatus, deleteProductFromBasket} from "../../../redux/ac
 import "./modal.scss";
 
 export const SmallCard = (props) => {
-    const {type, id, img, title, description, size, weight, price} = props;
+    const {type, id, img, title, description, price} = props;
     const dynamicPath = type === 'pizza' ? `/detail-pizza/${id}` : '';
 
     const removeProductFromBasket = useActions(deleteProductFromBasket);
+    const closeBasketModal = useActions(closeBasketModalStatus);
 
     const deleteFromBasket = () => {
         removeProductFromBasket(props);
-    }
+    };
 
-    // const closeFuncBasketModalStatus = useActions(closeBasketModalStatus);
-
+    const moveToDetailPizza = (e) => {
+        type !== 'pizza' && e.preventDefault();
+        closeBasketModal();
+    };
 
     return (
         <div className="basket-item">
             <Link
-                onClick={(e) => type !== 'pizza' && e.preventDefault()}
-                  to={dynamicPath}
+                onClick={moveToDetailPizza}
+                to={dynamicPath}
             >
-                {/*<img src={require(`../../../images/${img}`)} alt="Img"/>*/}
+                <img src={require(`../../../images/${img}`)} alt="Img"/>
             </Link>
             <div className="product-info">
                 <div className="product-info__name">{title}</div>

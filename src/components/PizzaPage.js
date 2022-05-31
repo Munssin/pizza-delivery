@@ -50,7 +50,7 @@ const PizzaPage = () => {
                 <h1>Pizza Title</h1>
             </div>
 
-            <FilterPizza onSortPizza={onSortPizza} pizzasData={pizzasData}/>
+            <FilterPizza onSortPizza={onSortPizza}/>
             <div className="catalog">
                 <div className="catalog-container">
                     {renderCard()}

@@ -4,7 +4,7 @@ import {useActions} from "../helpers/hooks/useActions";
 import {closeBasketModalStatus} from "../redux/actions/basketAction";
 
 const Nav = () => {
-    const closeFuncBasketModalStatus = useActions(closeBasketModalStatus);
+    const closeBasketModal = useActions(closeBasketModalStatus);
     const tabs = [
         { name: "Піца", path: "/" },
         { name: "Напої", path: "drink-page" },
@@ -20,7 +20,7 @@ const Nav = () => {
                             <Link
                                 to={tab.path}
                                 className="nav__link"
-                                onClick={closeFuncBasketModalStatus}
+                                onClick={closeBasketModal}
                             >
                                 {tab.name}
                             </Link>
