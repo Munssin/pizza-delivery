@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import {useSelector} from "react-redux";
 import {useActions} from "../helpers/hooks/useActions";
-import FilterPizza from "./FilterPizza";
-import {Card} from "./UI/index";
-import HomeSlider from "./UI/carousel/HomeSlider";
+import FilterPizza from "../components/main-elements/FilterPizza";
+import {Card} from "../components/UI";
+import HomeSlider from "../components/UI/carousel/HomeSlider";
 import "../css/main.scss";
 import {fetchPizza} from "../redux/actions/pizzaActions";
 

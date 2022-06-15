@@ -2,13 +2,13 @@ import React, {useState} from "react";
 import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import Nav from "./Nav";
-import {ButtonComponent, ModalComponent, ModalBasket} from "./UI/index";
-import useScrollHandler from "../helpers/hooks/useScrollHandler";
-import "../css/header.scss";
-import Logo from "../images/logo.png";
-import basket from "../images/bas.png";
-import {openBasketModalStatus} from "../redux/actions/basketAction";
-import {useActions} from "../helpers/hooks/useActions";
+import {ButtonComponent, ModalComponent, ModalBasket} from "../UI";
+import useScrollHandler from "../../helpers/hooks/useScrollHandler";
+import "../../css/header.scss";
+import Logo from "../../images/logo.png";
+import basket from "../../images/bas.png";
+import {openBasketModalStatus} from "../../redux/actions/basketAction";
+import {useActions} from "../../helpers/hooks/useActions";
 
 const Header = () => {
     const headerNameClass = `header ${useScrollHandler()}`;

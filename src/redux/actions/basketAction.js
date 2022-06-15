@@ -9,14 +9,14 @@ import {
     OPEN_BASKET_MODAL_STATUS_SUCCESS,
     CLOSE_BASKET_MODAL_STATUS,
     CLOSE_BASKET_MODAL_STATUS_SUCCESS,
-    ADD_SUCCESS
+    ADD_SUCCESS_ALERT
 } from "../types";
 import {all, call, fork, put, takeEvery} from "redux-saga/effects";
 import {ApiService} from "../../helpers/api-service";
 
 export const addProductToBasket = (product) => ({
-     type: ADD_PRODUCT_TO_BASKET,
-     payload: {product}
+    type: ADD_PRODUCT_TO_BASKET,
+    payload: {product}
 });
 
 export const successAddProduct = () => ({
@@ -24,7 +24,7 @@ export const successAddProduct = () => ({
 });
 
 export const fetchProductToBasket = () => ({
-     type: FETCH_PRODUCT_ITEMS,
+    type: FETCH_PRODUCT_ITEMS,
 });
 
 export const deleteProductFromBasket = (product) => ({
@@ -40,39 +40,31 @@ export const closeBasketModalStatus = () => ({
 });
 
 
-function* addProductToBasketWorker(dataProduct){
+function* addProductToBasketWorker(dataProduct) {
     try {
         const data = yield call(ApiService.create, "dataBasket", dataProduct.payload.product);
         yield put({
             type: ADD_PRODUCT_TO_BASKET_SUCCESS,
             payload: {product: data},
         });
-    } catch (error){
+        yield put({
+            type: ADD_SUCCESS_ALERT,
+            payload: {message: ` ${dataProduct.payload.product.title} додано в корзину `}
+        });
+        // yield put({
+        //     type: CLEAR_ALERTS,
+        // });
+
+    } catch (error) {
         console.log(error);
     }
 }
 
-function* addProductToBasketWatcher(){
+function* addProductToBasketWatcher() {
     yield takeEvery(ADD_PRODUCT_TO_BASKET, addProductToBasketWorker)
 }
 
-function* successAddWorker(){
-    try {
-        // const succesMess = document.getElementsByClassName('success-mess');
-        // succesMess.classList.add("my-class");
-        yield put({
-            type: ADD_SUCCESS,
-        });
-    } catch (error){
-        console.log(error);
-    }
-}
-
-function* successAddWorkerWatcher(){
-    yield takeEvery(ADD_SUCCESS, successAddWorker)
-}
-
-function* fetchBasketWorker(){
+function* fetchBasketWorker() {
     const basketData = yield call(ApiService.load, "dataBasket");
 
     yield put({
@@ -81,11 +73,11 @@ function* fetchBasketWorker(){
     })
 }
 
-function* fetchBasketWatcher(){
+function* fetchBasketWatcher() {
     yield takeEvery(FETCH_PRODUCT_ITEMS, fetchBasketWorker)
 }
 
-function* deleteProductFromBasketWorker(dataDeleteProduct){
+function* deleteProductFromBasketWorker(dataDeleteProduct) {
     const productId = dataDeleteProduct.payload.product.id;
     try {
         yield call(ApiService.remove, `dataBasket/${productId}`);
@@ -93,42 +85,41 @@ function* deleteProductFromBasketWorker(dataDeleteProduct){
             type: DELETE_PRODUCT_ITEMS_SUCCESS,
             payload: {productId},
         })
-    } catch (error){
+    } catch (error) {
         console.log(error);
     }
 }
 
-function* deleteProductFromBasketWatcher(){
+function* deleteProductFromBasketWatcher() {
     yield takeEvery(DELETE_PRODUCT_ITEMS, deleteProductFromBasketWorker)
 }
 
-function* openBasketModalStatusWorker(){
+function* openBasketModalStatusWorker() {
     yield put({
         type: OPEN_BASKET_MODAL_STATUS_SUCCESS,
     });
 }
 
-function* openBasketModalStatusWatcher(){
+function* openBasketModalStatusWatcher() {
     yield takeEvery(OPEN_BASKET_MODAL_STATUS, openBasketModalStatusWorker);
 }
 
-function* closeBasketModalStatusWorker(){
+function* closeBasketModalStatusWorker() {
     yield put({
         type: CLOSE_BASKET_MODAL_STATUS_SUCCESS,
     });
 }
 
-function* closeBasketModalStatusWatcher(){
+function* closeBasketModalStatusWatcher() {
     yield takeEvery(CLOSE_BASKET_MODAL_STATUS, closeBasketModalStatusWorker);
 }
 
-export function* basketWatcher(){
+export function* basketWatcher() {
     yield all([
         fork(addProductToBasketWatcher),
         fork(fetchBasketWatcher),
         fork(deleteProductFromBasketWatcher),
         fork(openBasketModalStatusWatcher),
-        fork(closeBasketModalStatusWatcher),
-        fork(successAddWorkerWatcher)
+        fork(closeBasketModalStatusWatcher)
     ])
 }

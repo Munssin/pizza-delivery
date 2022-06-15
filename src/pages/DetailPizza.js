@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {useParams} from "react-router-dom";
 import {useSelector} from "react-redux";
-import {ButtonComponent, DrinksSlider} from "./UI/index";
+import {ButtonComponent, DrinksSlider} from "../components/UI";
 import "../css/product-detail.scss";
 import {useActions} from "../helpers/hooks/useActions";
 import {fetchPizza} from "../redux/actions/pizzaActions";

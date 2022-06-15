@@ -1,0 +1,20 @@
+import {
+    ADD_SUCCESS_ALERT
+
+} from "../types";
+
+const initialState = {
+    data: [],
+}
+
+export default (state = initialState, {type, payload}) => {
+    switch (type){
+        case ADD_SUCCESS_ALERT:
+            return {
+                ...state,
+                data: [...state.data, payload.message]
+            };
+        default:
+            return state;
+    }
+}

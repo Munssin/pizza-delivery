@@ -132,28 +132,34 @@
   ],
   "dataBasket": [
     {
-      "type": "drink",
-      "id": "d2",
+      "type": "pizza",
+      "id": "p3",
       "img": "887590c4.jpeg",
-      "title": "Фанта",
-      "volume": "1л",
-      "price": 40
+      "title": "anasda",
+      "description": "томат, моцарела, пармезан",
+      "size": "35",
+      "weight": "450",
+      "price": 220
     },
     {
-      "type": "drink",
-      "id": "d1",
+      "type": "pizza",
+      "id": "p2",
       "img": "887590c4.jpeg",
-      "title": "Cola",
-      "volume": "0,5л",
-      "price": 25
+      "title": "Salmone",
+      "description": "'томат, моцарела, морепродукти, лимон, sadsadasd asd as пармезан',",
+      "size": "35",
+      "weight": "450",
+      "price": 220
     },
     {
-      "type": "drink",
-      "id": "d3",
+      "type": "pizza",
+      "id": "p1",
       "img": "887590c4.jpeg",
-      "title": "Rich",
-      "volume": "1л",
-      "price": 45
+      "title": "Frutti di mare",
+      "description": "томат, моцарела, морепродукти, лимон, пармезан",
+      "size": "30",
+      "weight": "350",
+      "price": 200
     }
   ]
 }

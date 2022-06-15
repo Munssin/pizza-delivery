@@ -3,7 +3,7 @@ import {Link, useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {useFormik} from "formik";
 import * as Yup from 'yup';
-import {ButtonComponent, InputComponent, BasketForm} from "./UI/index";
+import {ButtonComponent, InputComponent, BasketForm} from "../components/UI";
 
 import "../css/checkout.scss";
 

@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import {useSelector} from "react-redux";
 import {useEffect} from "react";
-import FilterDrink from "./FilterDrink";
+import FilterDrink from "../components/main-elements/FilterDrink";
 // import {DrinkCard} from "./UI/index";
-import {Card} from "./UI/index";
+import {Card} from "../components/UI";
 import {useActions} from "../helpers/hooks/useActions";
 import {fetchDrink} from "../redux/actions/drinkActions";
 

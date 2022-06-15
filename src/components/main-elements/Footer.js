@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import Logo from "../images/logo.png";
-import "../css/footer.scss";
+import Logo from "../../images/logo.png";
+import "../../css/footer.scss";
 
 const Footer = () => (
     <footer className="footer">
@@ -28,6 +28,6 @@ const Footer = () => (
             <li><span>Адреса:</span>м. Львів, вул. Чорновола 12</li>
         </ul>
     </footer>
-)
+);
 
 export default Footer;

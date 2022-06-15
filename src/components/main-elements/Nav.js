@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {useActions} from "../helpers/hooks/useActions";
-import {closeBasketModalStatus} from "../redux/actions/basketAction";
+import {useActions} from "../../helpers/hooks/useActions";
+import {closeBasketModalStatus} from "../../redux/actions/basketAction";
 
 const Nav = () => {
     const closeBasketModal = useActions(closeBasketModalStatus);

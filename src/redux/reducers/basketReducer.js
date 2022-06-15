@@ -4,13 +4,13 @@ import {
     DELETE_PRODUCT_ITEMS_SUCCESS,
     OPEN_BASKET_MODAL_STATUS_SUCCESS,
     CLOSE_BASKET_MODAL_STATUS_SUCCESS,
-    ADD_SUCCESS
 } from "../types";
 
 const initialState = {
    basketData: [],
     isModalBasketOpen: false,
-    isSuccessAddProduct: false
+    isSuccessAddProduct: false,
+    error: null
 }
 
 export default (state = initialState, {type, payload}) => {
@@ -19,11 +19,6 @@ export default (state = initialState, {type, payload}) => {
             return {
                 ...state,
                 basketData: [...state.basketData, payload.product]
-            };
-        case ADD_SUCCESS:
-            return {
-                ...state,
-                isSuccessAddProduct: true
             };
         case FETCH_PRODUCT_ITEMS_SUCCESS:
             return {

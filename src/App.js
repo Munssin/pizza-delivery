@@ -1,14 +1,14 @@
 import React from "react";
 import {Routes, Route} from "react-router-dom";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import PizzaPage from "./components/PizzaPage";
-import DrinkPage from "./components/DrinkPage";
-import SalatPage from "./components/SalatPage";
-import DiscountPage from "./components/DiscountsPage";
-import DetailPizza from "./components/DetailPizza";
-import CheckoutPage from "./components/CheckoutPage";
+import Header from "./components/main-elements/Header";
+import Footer from "./components/main-elements/Footer";
+import PizzaPage from "./pages/PizzaPage";
+import DrinkPage from "./pages/DrinkPage";
+import SalatPage from "./pages/SalatPage";
+import DiscountPage from "./pages/DiscountsPage";
+import DetailPizza from "./pages/DetailPizza";
+import CheckoutPage from "./pages/CheckoutPage";
 import "./css/reset.scss";
 import "./css/main.scss";
 

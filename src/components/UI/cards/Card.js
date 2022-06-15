@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import {useActions} from "../../../helpers/hooks/useActions";
 import {Link} from "react-router-dom";
 import {ButtonComponent} from "../index";
-import {addProductToBasket, successAddProduct} from "../../../redux/actions/basketAction";
+import {addProductToBasket} from "../../../redux/actions/basketAction";
 
 
 export const Card = (props) => {
@@ -11,21 +11,13 @@ export const Card = (props) => {
     const dynamicPath = type === 'pizza' ? `/detail-pizza/${id}` : '';
 
     const pushProductToBasket = useActions(addProductToBasket);
-    // const addSuccessAddProduct = useActions(successAddProduct);
 
    const addToBasket = () => {
        pushProductToBasket(props);
-       // console.log(addSuccessAddProduct);
-       // addSuccessAddProduct()
-       console.log(props.title);
-       let productName = props.title;
-       const showSuccessMess = () => {
-           let successMessDiv = document.getElementsByClassName("success-mess")
-           // successMessDiv.classList.add("active");
-           console.log(successMessDiv);
-
-       };
-       showSuccessMess();
+       // const showSuccessMess = () => {
+       //
+       // };
+       // showSuccessMess();
     }
 
     return (
@@ -70,7 +62,6 @@ export const Card = (props) => {
                     onClick={ addToBasket }
                 />
             </div>
-            {/*<div className={`success-mess ${addSuccessAddProduct ? 'active':''}`}>added to basket</div>*/}
         </div>
     );
 };
