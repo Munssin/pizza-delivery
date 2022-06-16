@@ -1,8 +1,6 @@
-import React, {useEffect} from "react";
-import {ButtonComponent} from "..";
+import React from "react";
 import {useActions} from "../../../helpers/hooks/useActions";
 import {clearAlerts} from "../../../redux/actions/alertsAction";
-
 
 export const Alert = (props) => {
     const {id, variant, message} = props;

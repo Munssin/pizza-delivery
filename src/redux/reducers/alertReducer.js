@@ -1,11 +1,11 @@
 import {
-    ADD_SUCCESS_ALERT, CLEAR_ALERTS_SUCCESS
-
+    ADD_SUCCESS_ALERT,
+    CLEAR_ALERTS_SUCCESS
 } from "../types";
 
 const initialState = {
     data: [],
-}
+};
 
 export default (state = initialState, {type, payload}) => {
     switch (type){

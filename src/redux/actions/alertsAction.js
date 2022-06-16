@@ -9,7 +9,6 @@ export const clearAlerts = (key) => ({
     payload: {key}
 });
 
-
 function* removeAlertWorker(data) {
     try {
         yield put({
