@@ -14,11 +14,7 @@ export const Card = (props) => {
 
    const addToBasket = () => {
        pushProductToBasket(props);
-       // const showSuccessMess = () => {
-       //
-       // };
-       // showSuccessMess();
-    }
+    };
 
     return (
         <div className="product-item">

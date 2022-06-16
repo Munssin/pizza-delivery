@@ -13,15 +13,14 @@ import {useActions} from "../../helpers/hooks/useActions";
 const Header = () => {
     const headerNameClass = `header ${useScrollHandler()}`;
     const basketDataItems = useSelector(state => state.basket.basketData);
-
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = () => {
         setIsModalOpen(true);
-    }
+    };
     const closeModal = () => {
         setIsModalOpen(false);
-    }
+    };
 
     const openBasketModal = useActions(openBasketModalStatus);
 

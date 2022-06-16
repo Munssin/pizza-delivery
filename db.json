@@ -133,13 +133,13 @@
   "dataBasket": [
     {
       "type": "pizza",
-      "id": "p3",
+      "id": "p1",
       "img": "887590c4.jpeg",
-      "title": "anasda",
-      "description": "томат, моцарела, пармезан",
-      "size": "35",
-      "weight": "450",
-      "price": 220
+      "title": "Frutti di mare",
+      "description": "томат, моцарела, морепродукти, лимон, пармезан",
+      "size": "30",
+      "weight": "350",
+      "price": 200
     },
     {
       "type": "pizza",
@@ -150,16 +150,6 @@
       "size": "35",
       "weight": "450",
       "price": 220
-    },
-    {
-      "type": "pizza",
-      "id": "p1",
-      "img": "887590c4.jpeg",
-      "title": "Frutti di mare",
-      "description": "томат, моцарела, морепродукти, лимон, пармезан",
-      "size": "30",
-      "weight": "350",
-      "price": 200
     }
   ]
 }

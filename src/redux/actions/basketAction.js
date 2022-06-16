@@ -49,12 +49,12 @@ function* addProductToBasketWorker(dataProduct) {
         });
         yield put({
             type: ADD_SUCCESS_ALERT,
-            payload: {message: ` ${dataProduct.payload.product.title} додано в корзину `}
+            payload: {
+                type: "success",
+                message: ` ${dataProduct.payload.product.title} додано в корзину `,
+                key: Math.random()
+            }
         });
-        // yield put({
-        //     type: CLEAR_ALERTS,
-        // });
-
     } catch (error) {
         console.log(error);
     }

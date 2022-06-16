@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Routes, Route} from "react-router-dom";
 
 import Header from "./components/main-elements/Header";
@@ -9,14 +9,32 @@ import SalatPage from "./pages/SalatPage";
 import DiscountPage from "./pages/DiscountsPage";
 import DetailPizza from "./pages/DetailPizza";
 import CheckoutPage from "./pages/CheckoutPage";
+// import { Alert } from 'react-bootstrap';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 import "./css/reset.scss";
 import "./css/main.scss";
+import {useSelector} from "react-redux";
+import {Alert} from "./components/UI";
 
 const App = () => {
+    const alertData = useSelector(state => state.alerts.data);
+    console.log(alertData);
+    const renderSuccessAlert = () => (
+        alertData.map(item => {
+            return  <Alert
+            id={item.key}
+            key={item.key}
+            variant="success"
+            message={item.message}
+            />
+        })
+    );
 
-  return (
-    <div className="App">
-        <Header />
+
+    return (
+        <div className="App">
+            <Header/>
             <Routes>
                 <Route path='/' element={<PizzaPage/>}/>
                 <Route path='/drink-page' element={<DrinkPage/>}/>
@@ -26,9 +44,12 @@ const App = () => {
                 <Route path='/checkout' element={<CheckoutPage/>}/>
                 <Route path='*' element={<PizzaPage/>}/>
             </Routes>
-        <Footer/>
-    </div>
-  );
+            <Footer/>
+            <div className="alerts-container">
+                {renderSuccessAlert()}
+            </div>
+        </div>
+    );
 }
 
 export default App;

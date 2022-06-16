@@ -11,3 +11,4 @@ export {ModalComponent} from "./modal/ModalComponent";
 export {ModalBasket} from "./modal/ModalBasket";
 export {BasketForm} from "./modal/BasketForm";
 export {SmallCard} from "./modal/SmallCard";
+export {Alert} from "./modal/Alert";

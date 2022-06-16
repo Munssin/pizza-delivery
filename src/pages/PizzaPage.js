@@ -7,6 +7,7 @@ import HomeSlider from "../components/UI/carousel/HomeSlider";
 import "../css/main.scss";
 import {fetchPizza} from "../redux/actions/pizzaActions";
 
+
 const PizzaPage = () => {
     const pizzasData = useSelector(state => state.pizza.data);
 
@@ -38,6 +39,7 @@ const PizzaPage = () => {
         })
     );
 
+
     const onSortPizza = category => {
         const updatedContent = pizzasData.filter(item => category === "All" ? item : item.category === category);
         setFilteredPizzasData(updatedContent);
@@ -56,6 +58,7 @@ const PizzaPage = () => {
                     {renderCard()}
                 </div>
             </div>
+
         </div>
     );
 };
