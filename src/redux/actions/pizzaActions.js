@@ -2,7 +2,6 @@ import { all, fork, takeEvery, call, put } from "redux-saga/effects";
 import { FETCH_PIZZA, FETCH_PIZZA_SUCCESS } from "../types";
 import { ApiService } from "../../helpers/api-service";
 
-
 export const fetchPizza = () => ({
     type: FETCH_PIZZA,
 });

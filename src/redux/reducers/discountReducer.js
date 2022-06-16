@@ -1,4 +1,4 @@
-import PizzaIMG from "../../img/887590c4.jpeg";
+import PizzaIMG from "../../images/887590c4.jpeg";
 
 const dataDiscount = [
     {

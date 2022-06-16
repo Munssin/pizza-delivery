@@ -1,24 +1,32 @@
 import React from "react";
 import {Link} from "react-router-dom";
-
-import "./modal.scss";
 import {useActions} from "../../../helpers/hooks/useActions";
-import { deleteProductFromBasket} from "../../../redux/actions/basketAction";
+import {closeBasketModalStatus, deleteProductFromBasket} from "../../../redux/actions/basketAction";
+import "./modal.scss";
 
-const SmallCard = (props) => {
-    const {type, id, img, title, description, size, weight, price} = props;
+export const SmallCard = (props) => {
+    const {type, id, img, title, description, price} = props;
     const dynamicPath = type === 'pizza' ? `/detail-pizza/${id}` : '';
 
     const removeProductFromBasket = useActions(deleteProductFromBasket);
-
+    const closeBasketModal = useActions(closeBasketModalStatus);
 
     const deleteFromBasket = () => {
         removeProductFromBasket(props);
-    }
+    };
+
+    const moveToDetailPizza = (e) => {
+        type !== 'pizza' && e.preventDefault();
+        closeBasketModal();
+    };
+
     return (
         <div className="basket-item">
-            <Link to="/">
-                <img src={img} alt="Img"/>
+            <Link
+                onClick={moveToDetailPizza}
+                to={dynamicPath}
+            >
+                <img src={require(`../../../images/${img}`)} alt="Img"/>
             </Link>
             <div className="product-info">
                 <div className="product-info__name">{title}</div>
@@ -37,7 +45,4 @@ const SmallCard = (props) => {
             </div>
         </div>
     );
-}
-
-export default SmallCard;
-
+};

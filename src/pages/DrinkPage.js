@@ -1,34 +1,39 @@
 import React, {useState} from "react";
 import {useSelector} from "react-redux";
-
-import FilterDrink from "./FilterDrink";
-import DrinkCard from "./UI/DrinkCard";
-
 import {useEffect} from "react";
+import FilterDrink from "../components/main-elements/FilterDrink";
+// import {DrinkCard} from "./UI/index";
+import {Card} from "../components/UI";
 import {useActions} from "../helpers/hooks/useActions";
 import {fetchDrink} from "../redux/actions/drinkActions";
 
-const DrinkPage = (props) => {
-    const getDrink = useActions(fetchDrink)
-
+const DrinkPage = () => {
     const drinksData = useSelector(state => state.drink.data);
+
     const [filteredDrinkData, setFilteredDrinksData] = useState(drinksData);
+
+    const getDrink = useActions(fetchDrink)
 
     useEffect(() => {
         getDrink();
     }, [getDrink]);
 
     useEffect(() => {
-        setFilteredDrinksData(drinksData);
+        // setFilteredDrinksData(drinksData);
+        drinksData.length > 0 && setFilteredDrinksData(drinksData);
+
     }, [drinksData]);
 
     const renderCard = () => {
         return filteredDrinkData.map(item => {
-            return <DrinkCard
+            return <Card
+                type={item.type}
+                id={item.id}
                 key={item.id}
                 img={item.img}
                 title={item.title}
                 size={item.size}
+                volume={item.volume}
                 price={item.price}
             />;
         })
@@ -53,6 +58,6 @@ const DrinkPage = (props) => {
             </div>
         </div>
     );
-}
+};
 
 export default DrinkPage;

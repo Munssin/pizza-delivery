@@ -1,23 +1,40 @@
-import React, {useState, useEffect} from "react";
-import { Routes, Route } from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {Routes, Route} from "react-router-dom";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Swiper from "./components/UI/carousel/Swiper";
-import PizzaPage from "./components/PizzaPage";
-import DrinkPage from "./components/DrinkPage";
-import SalatPage from "./components/SalatPage";
+import Header from "./components/main-elements/Header";
+import Footer from "./components/main-elements/Footer";
+import PizzaPage from "./pages/PizzaPage";
+import DrinkPage from "./pages/DrinkPage";
+import SalatPage from "./pages/SalatPage";
+import DiscountPage from "./pages/DiscountsPage";
+import DetailPizza from "./pages/DetailPizza";
+import CheckoutPage from "./pages/CheckoutPage";
+// import { Alert } from 'react-bootstrap';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 import "./css/reset.scss";
 import "./css/main.scss";
-import DiscountPage from "./components/DiscountsPage";
-import DetailPizza from "./components/DetailPizza";
-import CheckoutPage from "./components/CheckoutPage";
+import {useSelector} from "react-redux";
+import {Alert} from "./components/UI";
 
 const App = () => {
+    const alertData = useSelector(state => state.alerts.data);
+    console.log(alertData);
+    const renderSuccessAlert = () => (
+        alertData.map(item => {
+            return  <Alert
+            id={item.key}
+            key={item.key}
+            variant="success"
+            message={item.message}
+            />
+        })
+    );
 
-  return (
-    <div className="App">
-        <Header />
+
+    return (
+        <div className="App">
+            <Header/>
             <Routes>
                 <Route path='/' element={<PizzaPage/>}/>
                 <Route path='/drink-page' element={<DrinkPage/>}/>
@@ -27,9 +44,12 @@ const App = () => {
                 <Route path='/checkout' element={<CheckoutPage/>}/>
                 <Route path='*' element={<PizzaPage/>}/>
             </Routes>
-        <Footer/>
-    </div>
-  );
+            <Footer/>
+            <div className="alerts-container">
+                {renderSuccessAlert()}
+            </div>
+        </div>
+    );
 }
 
 export default App;

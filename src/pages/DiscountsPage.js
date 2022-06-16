@@ -1,6 +1,6 @@
 import React from "react";
 import {useSelector} from "react-redux";
-import DiscountCard from "./UI/DiscountCard";
+import {DiscountCard} from "../components/UI";
 import "../css/discount.scss";
 
 const DiscountPage = () => {
@@ -24,6 +24,6 @@ const DiscountPage = () => {
             </div>
         </div>
     );
-}
+};
 
 export default DiscountPage;

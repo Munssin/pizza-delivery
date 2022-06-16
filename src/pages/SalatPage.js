@@ -1,9 +1,6 @@
 import React, {Component} from "react";
-
 import { connect } from "react-redux";
-
-import Card from "./UI/Card";
-
+import {Card} from "../components/UI";
 import {fetchSalat} from "../redux/actions/salatActions";
 
 class SalatPage extends Component{
@@ -24,6 +21,7 @@ class SalatPage extends Component{
             return <Card
                 key={item.id}
                 img={item.img}
+                id={item.id}
                 title={item.title}
                 description={item.description}
                 size={item.size}
@@ -49,16 +47,16 @@ class SalatPage extends Component{
         </div>
      )
     }
-}
+};
 
 const mapDispatchToProps = {
     fetchSalat
-}
+};
 
 const mapStateToProps = (state) => {
     return {
         salats: state.salat.data
     }
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SalatPage);

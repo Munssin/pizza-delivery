@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
-const FilterPizza = ({ onSortPizza }) => {
+const FilterPizza = ({onSortPizza}) => {
     const [tabs, setTabs] = useState([
         {
             id: 1,
@@ -30,7 +30,7 @@ const FilterPizza = ({ onSortPizza }) => {
 
     const onFilterPizza = category => {
         const updatedTabs = tabs.map(item => {
-            if (item.category === category){
+            if (item.category === category) {
                 return {...item, status: true}
             } else {
                 return {...item, status: false}
@@ -45,12 +45,12 @@ const FilterPizza = ({ onSortPizza }) => {
         <div className="filter-container">
             {
                 tabs.map(tab => (
-                    <li onClick={() => onFilterPizza(tab.category)} key={tab.id} className={`${tab.status ? 'active' : ''} filter-item`}>{tab.name}</li>
+                    <li onClick={() => onFilterPizza(tab.category)} key={tab.id}
+                        className={`${tab.status ? 'active' : ''} filter-item`}>{tab.name}</li>
                 ))
             }
         </div>
     );
-
-}
+};
 
 export default FilterPizza;
