@@ -9,6 +9,7 @@ class SalatPage extends Component{
         super(props);
 
         this.state = {};
+        // this.renderCard = this.renderCard.bind(this)
     }
 
     componentDidMount() {

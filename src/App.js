@@ -9,8 +9,6 @@ import SalatPage from "./pages/SalatPage";
 import DiscountPage from "./pages/DiscountsPage";
 import DetailPizza from "./pages/DetailPizza";
 import CheckoutPage from "./pages/CheckoutPage";
-// import { Alert } from 'react-bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import "./css/reset.scss";
 import "./css/main.scss";
@@ -19,18 +17,16 @@ import {Alert} from "./components/UI";
 
 const App = () => {
     const alertData = useSelector(state => state.alerts.data);
-    console.log(alertData);
     const renderSuccessAlert = () => (
         alertData.map(item => {
             return  <Alert
             id={item.key}
             key={item.key}
-            variant="success"
+            variant={item.type}
             message={item.message}
             />
         })
     );
-
 
     return (
         <div className="App">
@@ -50,6 +46,6 @@ const App = () => {
             </div>
         </div>
     );
-}
+};
 
 export default App;

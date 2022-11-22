@@ -7,7 +7,6 @@ import 'swiper/css/scrollbar';
 import './carousel.css';
 // import Banner from "../../../images/truffaldino_banner_3.mp4"
 
-
 const HomeSlider = () => {
     return (
         <Swiper className="mySwiper">

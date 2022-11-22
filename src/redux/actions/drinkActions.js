@@ -4,7 +4,7 @@ import {ApiService} from "../../helpers/api-service";
 
 export const fetchDrink = () => ({
     type: FETCH_DRINK,
-})
+});
 
 function* fetchDrinkWorker() {
     const data = yield call(ApiService.load, "dataDrink");

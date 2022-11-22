@@ -170,5 +170,20 @@
       }
 
     }
+    &.error{
+      background: #ed7367;
+      color: #2f0a02;
+      border: 1px solid #2f0a02;
+      .remove-alert{
+        &:before{
+          background: #2f0a02;
+        }
+        &:after{
+          background: #2f0a02;
+        }
+
+      }
+
+    }
   }
 }

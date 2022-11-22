@@ -9,7 +9,8 @@ import {
     OPEN_BASKET_MODAL_STATUS_SUCCESS,
     CLOSE_BASKET_MODAL_STATUS,
     CLOSE_BASKET_MODAL_STATUS_SUCCESS,
-    ADD_SUCCESS_ALERT
+    ADD_SUCCESS_ALERT,
+    ADD_ERROR_ALERT
 } from "../types";
 import {all, call, fork, put, takeEvery} from "redux-saga/effects";
 import {ApiService} from "../../helpers/api-service";
@@ -19,10 +20,6 @@ export const addProductToBasket = (product) => ({
     payload: {product}
 });
 
-export const successAddProduct = () => ({
-    type: ADD_PRODUCT_TO_BASKET,
-});
-
 export const fetchProductToBasket = () => ({
     type: FETCH_PRODUCT_ITEMS,
 });
@@ -30,7 +27,7 @@ export const fetchProductToBasket = () => ({
 export const deleteProductFromBasket = (product) => ({
     type: DELETE_PRODUCT_ITEMS,
     payload: {product}
-})
+});
 
 export const openBasketModalStatus = () => ({
     type: OPEN_BASKET_MODAL_STATUS
@@ -56,7 +53,14 @@ function* addProductToBasketWorker(dataProduct) {
             }
         });
     } catch (error) {
-        console.log(error);
+        yield put({
+            type: ADD_ERROR_ALERT,
+            payload: {
+                type: "error",
+                message: ` ${dataProduct.payload.product.title} вже корзині`,
+                key: Math.random()
+            }
+        });
     }
 }
 

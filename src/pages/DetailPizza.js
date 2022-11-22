@@ -26,7 +26,7 @@ const DetailPizza = () => {
         if (drinksData.length === 0) {
             getDrink();
         }
-    }, [getDrink, drinksData])
+    }, [getDrink, drinksData]);
 
     const selectedPizza = pizzasData.find( item => item.id === match.id );
     const pushProductToBasket = useActions(addProductToBasket);

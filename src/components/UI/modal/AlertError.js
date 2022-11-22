@@ -2,17 +2,17 @@ import React from "react";
 import {useActions} from "../../../helpers/hooks/useActions";
 import {clearAlerts} from "../../../redux/actions/alertsAction";
 
-export const Alert = (props) => {
+export const AlertError = (props) => {
     const {id, variant, message} = props;
 
     const removeAlert = useActions(clearAlerts);
 
     const setTimeAlert = () => {
-        removeAlert(id);
+        removeAlert(id)
     };
 
     return (
-        <div variant={variant} className={`alert-item ${variant === 'error' ? 'error' : ''}`}>
+        <div variant={variant} className={`alert-item ${variant ? 'error' : 'error'}`}>
             <div onClick={setTimeAlert} className="remove-alert">
 
             </div>

@@ -191,6 +191,17 @@
           margin-top: 10px;
         }
       }
+      .counts{
+        margin-bottom: 15px;
+        label{
+          font-size: 12px;
+          display: block;
+        }
+        select{
+          width: 100%;
+          max-width: 50px;
+        }
+      }
       .product-price-info{
         text-align: right;
         .product-price{

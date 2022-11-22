@@ -14,6 +14,7 @@ const Header = () => {
     const headerNameClass = `header ${useScrollHandler()}`;
     const basketDataItems = useSelector(state => state.basket.basketData);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const openBasketModal = useActions(openBasketModalStatus);
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -21,8 +22,6 @@ const Header = () => {
     const closeModal = () => {
         setIsModalOpen(false);
     };
-
-    const openBasketModal = useActions(openBasketModalStatus);
 
     return (
         <div>

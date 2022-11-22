@@ -8,7 +8,4 @@ export const ButtonComponent = ({onClick, buttonName, buttonType}) => {
             <Button onClick={onClick} className='btn' type={buttonType}>{buttonName}</Button>
         </div>
     );
-}
-
-
-// export default ButtonComponet;
+};

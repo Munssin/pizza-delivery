@@ -1,11 +1,12 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {useState} from "react";
 import {Link} from "react-router-dom";
 import {useActions} from "../../../helpers/hooks/useActions";
 import {closeBasketModalStatus, deleteProductFromBasket} from "../../../redux/actions/basketAction";
 import "./modal.scss";
 
 export const SmallCard = (props) => {
-    const {type, id, img, title, description, price} = props;
+    const {type, id, img, title, description, price, getUpdatedSum} = props;
     const dynamicPath = type === 'pizza' ? `/detail-pizza/${id}` : '';
 
     const removeProductFromBasket = useActions(deleteProductFromBasket);
@@ -18,6 +19,16 @@ export const SmallCard = (props) => {
     const moveToDetailPizza = (e) => {
         type !== 'pizza' && e.preventDefault();
         closeBasketModal();
+    };
+
+    const [value, setValue] = useState(1);
+    const [updatedPrice, setUpdatedPrice] = useState(price);
+
+    const handleChange = (e) => {
+        const updatedPrice = e.target.value * price;
+        setValue(e.target.value);
+        setUpdatedPrice(updatedPrice);
+        getUpdatedSum(updatedPrice, id);
     };
 
     return (
@@ -35,10 +46,21 @@ export const SmallCard = (props) => {
                 </div>
             </div>
             <div className="product-price-info">
-                <div className="product-price">{price} грн</div>
+                <div className="counts">
+                    <label>Кількість {value}</label>
+                    <select value={value} onChange={handleChange}>
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+
+                <div className="product-price">{updatedPrice} грн</div>
                 <div
                     className="remove-item"
-                    onClick={ () => deleteFromBasket(props) }
+                    onClick={() => deleteFromBasket(props)}
                 >
                     Видалити
                 </div>
