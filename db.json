@@ -73,7 +73,7 @@
       "id": "d1",
       "img": "887590c4.jpeg",
       "title": "Cola",
-      "size": "0,5л",
+      "volume": "0,5л",
       "price": 25,
       "category": "Water"
     },
@@ -82,7 +82,7 @@
       "id": "d2",
       "img": "887590c4.jpeg",
       "title": "Фанта",
-      "size": "1л",
+      "volume": "1л",
       "price": 40,
       "category": "Water"
     },
@@ -91,7 +91,7 @@
       "id": "d3",
       "img": "887590c4.jpeg",
       "title": "Rich",
-      "size": "1л",
+      "volume": "1л",
       "price": 45,
       "category": "Juice"
     }
@@ -142,18 +142,32 @@
       "price": 220
     },
     {
-      "img": "src/img/887590c4.jpeg",
-      "title": "Аллегро",
-      "description": "салат Айсберг, бастурма, перець болгарський, помідори чері, фета, горіхи кеш'ю, соус",
-      "price": 110,
-      "id": "0AJRDp8"
+      "type": "pizza",
+      "id": "p1",
+      "img": "887590c4.jpeg",
+      "title": "Frutti di mare",
+      "description": "томат, моцарела, морепродукти, лимон, пармезан",
+      "size": "30",
+      "weight": "350",
+      "price": 200
     },
     {
-      "img": "src/img/887590c4.jpeg",
-      "title": "Аллегро",
-      "description": "салат Айсберг, бастурма, перець болгарський, помідори чері, фета, горіхи кеш'ю, соус",
-      "price": 110,
-      "id": "UecJT74"
+      "type": "pizza",
+      "id": "p3",
+      "img": "887590c4.jpeg",
+      "title": "anasda",
+      "description": "томат, моцарела, пармезан",
+      "size": "35",
+      "weight": "450",
+      "price": 220
+    },
+    {
+      "type": "drink",
+      "id": "d2",
+      "img": "887590c4.jpeg",
+      "title": "Фанта",
+      "volume": "1л",
+      "price": 40
     }
   ]
 }

@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import {useSelector} from "react-redux";
 import {useActions} from "../helpers/hooks/useActions";
-
-import FilterPizza from "./FilterPizza";
-import Card from "./UI/Card";
-import Swiper from "./UI/carousel/Swiper";
+import FilterPizza from "../components/main-elements/FilterPizza";
+import {Card} from "../components/UI";
+import HomeSlider from "../components/UI/carousel/HomeSlider";
 import "../css/main.scss";
-
 import {fetchPizza} from "../redux/actions/pizzaActions";
 
 
@@ -41,6 +39,7 @@ const PizzaPage = () => {
         })
     );
 
+
     const onSortPizza = category => {
         const updatedContent = pizzasData.filter(item => category === "All" ? item : item.category === category);
         setFilteredPizzasData(updatedContent);
@@ -48,17 +47,18 @@ const PizzaPage = () => {
 
     return (
         <div className="pizza-main">
-            <Swiper />
+            <HomeSlider />
             <div className="main-banner">
                 <h1>Pizza Title</h1>
             </div>
 
-            <FilterPizza onSortPizza={onSortPizza} pizzasData={pizzasData}/>
+            <FilterPizza onSortPizza={onSortPizza}/>
             <div className="catalog">
                 <div className="catalog-container">
                     {renderCard()}
                 </div>
             </div>
+
         </div>
     );
 };

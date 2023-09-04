@@ -1,12 +1,11 @@
 import React from "react";
-import ButtonComponet from "./UI/button/ButtonComponet";
 
-const ConstructorPizza = (props) => {
+const ConstructorPizza = () => {
     return (
         <div>
             Constructor Pizza
         </div>
     );
-}
+};
 
 export default ConstructorPizza;

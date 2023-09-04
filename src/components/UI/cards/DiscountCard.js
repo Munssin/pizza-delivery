@@ -1,6 +1,6 @@
 import React from "react";
 
-const DiscountCard = (props) => {
+export const DiscountCard = (props) => {
     const {img, listTitle} = props;
     return (
         <div className="discount-item">
@@ -11,6 +11,4 @@ const DiscountCard = (props) => {
 
         </div>
     );
-}
-
-export default DiscountCard;
+};

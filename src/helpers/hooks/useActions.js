@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { useMemo } from 'react'
 
 export function useActions(actions, deps) {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     return useMemo(
         () => {
             if (Array.isArray(actions)) {
